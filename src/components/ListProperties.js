@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropertyCards from "./PropertyCards";
 //import Row from 'react-bootstrap/Row';
 //import Col from 'react-bootstrap/Col';

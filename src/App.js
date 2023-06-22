@@ -4,7 +4,7 @@ import "./App.css";
 import Container from 'react-bootstrap/Container';
 import Home from "./components/Home";
 import Properties from './components/Properties'
-import Search from "./components/Search";
+
 import AddProperty from "./components/AddProperty";
 import PropertyDisplay from "./components/PropertyDisplay";
 import ListProperties from "./components/ListProperties";

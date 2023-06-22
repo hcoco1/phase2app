@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import ListProperties from './ListProperties';
+
 
 function Properties() {
   return (

@@ -1,38 +1,143 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  padding: 0%;
+  margin: 0%;
+  font-family: "Open Sans", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
+  margin: 0;
+  width: 100%;
+  height: 80px;
+  background-color: rgb(52, 144, 226);
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 25px;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid rgb(52, 144, 226);
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9dbfaf;
+}
+
+.searchTerm:focus {
+  color: rgb(69, 62, 249);
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid rgb(69, 62, 249);
+  background: rgb(69, 62, 249);
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.productsNav {
+  width: 70%;
+  height: 80px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.productsNav a {
+  width: 300px;
+  height: 50px;
+  background-color: rgb(107, 170, 233);
+  border-radius: 5px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+.listOfProducts {
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.productsList {
+  columns: 3 auto;
+  display: inline-block;
+}
+
+.productDisplay {
+  width: 300px;
+  height: 300px;
+  background-color: rgb(233, 233, 233);
+  cursor: pointer;
+}
+
+.roomfac {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  justify-content: center;
+}
+
+.card{
+  margin: 20px;
+}
+
+.me-0 {
+  margin-left: 40px;
+}
+
+hr.style1 {
+  border-top: 6px double #433f3f;
+  width: 100%;
+}
+
+h2.filterFormh2 {
+  text-align: center;
+  padding-bottom:0%;
+  
+  margin: auto;
 }

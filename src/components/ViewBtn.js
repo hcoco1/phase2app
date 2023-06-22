@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import CardModal from './CardModal';
-import { FcHome } from "react-icons/fc"
+
 
 function ViewBtn({properties}) {
     const { id } = useParams();
@@ -21,7 +21,7 @@ function ViewBtn({properties}) {
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>
-            <FcHome /> For {properties[id - 1].operation_type} <strong>{properties[id - 1].property_type}</strong>
+           For {properties[id - 1].operation_type} <strong>{properties[id - 1].property_type}</strong>
             </Modal.Title>
         </Modal.Header>
         <Modal.Body>

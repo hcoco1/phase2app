@@ -1,4 +1,4 @@
-import { Link, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Container from 'react-bootstrap/Container';
@@ -8,12 +8,15 @@ import AddProperty from "./components/AddProperty";
 import PropertyDisplay from "./components/PropertyDisplay";
 import ListProperties from "./components/ListProperties";
 import Spinner from 'react-bootstrap/Spinner';
+import NavigationBar from "./components/NavigationBar";
 
  function App() {
   const [properties, setProperties] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
-
+  const handleArrayUpdate = (filteredProperties) => {
+    setProperties(filteredProperties);
+  };
 
   useEffect(() => {
     fetch("https://phase2-db.onrender.com/properties")
@@ -29,16 +32,13 @@ import Spinner from 'react-bootstrap/Spinner';
     while the instance spins up.</h6>
 
   return (
-    <Container>
-      <nav>
-        <Link to="/"> Home </Link>
-        <Link to="products/list"> Properties </Link>
-      </nav>
+    <Container fluid>
+<NavigationBar/>
       <Routes>
         <Route path="/" element={<Home />} />
 
         <Route path="products" element={<Properties properties={properties} />}>
-          <Route path="list" element={<ListProperties properties={properties} />} />
+          <Route path="list" element={<ListProperties properties={properties} onUpdate={handleArrayUpdate}/>} />
           <Route path="add" element={<AddProperty properties={properties} />} />
           <Route path=":id" element={<PropertyDisplay properties={properties} />} />
         </Route>

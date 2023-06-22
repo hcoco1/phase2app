@@ -7,7 +7,7 @@
 body {
   padding: 0%;
   margin: 0%;
-  font-family: "Open Sans", sans-serif;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
 nav {
@@ -18,58 +18,46 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: rgb(16, 1, 1);
   text-decoration: none;
 }
 
 a {
-  color: white;
+ 
   text-decoration: none;
   margin: 10px;
   font-size: 25px;
 }
-
-.search {
-  width: 100%;
-  position: relative;
-  display: flex;
+.linkNav {
+   color: rgb(49, 33, 33);
+   font-size: 30px;
+   margin-right: 10%;
+   margin-left: 10%;
 }
 
-.searchTerm {
-  width: 100%;
-  border: 3px solid rgb(52, 144, 226);
-  border-right: none;
-  padding: 5px;
-  height: 20px;
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  color: #9dbfaf;
+.linkNav:hover  {
+  color: rgb(202, 192, 192);
+
 }
 
-.searchTerm:focus {
-  color: rgb(69, 62, 249);
+.linkproperties {
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  margin-right: 10%;
+  margin-left: 10%;
 }
 
-.searchButton {
-  width: 40px;
-  height: 36px;
-  border: 1px solid rgb(69, 62, 249);
-  background: rgb(69, 62, 249);
-  text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 20px;
+.linkproperties:hover  {
+  color: rgb(9, 235, 133);
+
 }
 
-/*Resize the wrap to see the search bar change!*/
-.wrap {
-  width: 30%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
+
+
+
+
+
 
 
 .productsNav {
@@ -120,6 +108,7 @@ a {
   max-width: 100%;
   margin: 0;
   justify-content: center;
+  
 }
 
 .card{
@@ -141,3 +130,13 @@ h2.filterFormh2 {
   
   margin: auto;
 }
+
+.filterForm {
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+  padding-top: 0%;
+}
+
+
+

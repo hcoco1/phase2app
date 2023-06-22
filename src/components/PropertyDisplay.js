@@ -5,6 +5,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import DeleteBtn from './DeleteBtn';
 import ViewBtn from './ViewBtn';
+import FooterHome from "./FooterHome";
 
 
 function PropertyDisplay({ properties }) {
@@ -12,7 +13,7 @@ function PropertyDisplay({ properties }) {
     return (
         <div className="roomfac">
             <Card style={{ width: '35rem' }}>
-                <Card.Img variant="top" src={properties[id - 1].image} />
+                <Card.Img variant="top" src={properties[id - 1].image}  />
                 <Card.Body>
                     <Card.Text>
                         For {properties[id - 1].operation_type} <strong>{properties[id - 1].property_type}</strong>
@@ -34,6 +35,7 @@ function PropertyDisplay({ properties }) {
                     </ButtonToolbar>
                 </Card.Body>
             </Card>
+            <FooterHome/>
         </div>
     );
 }

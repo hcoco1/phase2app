@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+Ivan Arias. Full-Stack Engineering Student.
+Phase 1 Project: World Population Dashboard
+Link: https://hcoco1.github.io/Phase1_app/
+Project Pitch
+World Population Dashboard (WPD) is an HTML/CSS/JS app that accesses data from a web service (https://world-population-dashboard.onrender.com/countries). WPD returns a collection of countries. Each object has five attributes (country, area_in_Square_Kilometers, population, flagUrl, and message). The App fetches all the data as soon the browser load. Also, users can search for a specific country using an HTML form and sort the collection by their properties. Moreover, users can add a new country. Finally, users can leave personalized messages on the text box input.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Instructions:
+All the data is fetched as soon the app load. The user can scroll down and check the collection of countries. Also, users have access to the app data through five inputs menu:
 
-## Available Scripts
+Search Menu: By typing the country name, users can check if a specific country is in the database.By clicking the GET ALL COUNTRIES can return to the main screen.
 
-In the project directory, you can run:
+Sort Menu: by clicking on the dropdown Menu, users can sort the database by their properties(country name, country population, and country area).
 
-### `npm start`
+Add New Country Menu: user who wants to add a country has to fill out four text inputs with the information related to their properties: country name, URL from a flag image of the country, country population, and country area (in km2). By clicking the GET ALL COUNTRIES can return to the main screen.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Card Country Menu and buttons: users who want to leave a message on the country card must fill out the text box input and click the submit button. The message will appear immediately and could be deleted if the user prefers. By clicking the red button, the user can delete the country card.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Theme Menu: by clicking the dropdown menu user can choose between light and dark themes.
 
-### `npm test`
+how this app works
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Project Structure
 
-### `npm run build`
+World Population Dashboard runs on a single page and contains single HTML, CSS, and JS files.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+World Population Dashboard App uses:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+An event listener with a DOMContentLoaded event.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+An event listener with a submit event toggling dark/light mode.
 
-### `npm run eject`
+An event listener with a click event to get all countries.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+An event listener with a submit event to leave messages.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+An event listener with a click event to remove messages.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+An event listener with a click event to delete a country.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+An event listener with a submit event to add new countries.
 
-## Learn More
+An event listener with a submit event to filter a specific country.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+An event listener with a change event to sort an array of objects.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+World Population Dashboard App has:
 
-### Code Splitting
+Six if statements.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Two for-loop statements.
 
-### Analyzing the Bundle Size
+Three .push() method.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Three .forEach methods.
 
-### Making a Progressive Web App
+One .sort() method.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+One GET method.
 
-### Advanced Configuration
+One PATCH method.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+One POST method.
 
-### Deployment
+One DELETE methods.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Challenges
 
-### `npm run build` fails to minify
+Write a clean code
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Deployment, Database: (https://world-population-dashboard.onrender.com), App : (https://hcoco1.github.io/Phase1_app/)
+
+Responsive design (Adding a mobile-style CSS file)

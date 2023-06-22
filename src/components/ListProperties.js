@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropertyCards from "./PropertyCards";
 import Filter from "./Filter";
+import FooterHome from './FooterHome';
 
-function ListProperties({ properties }) {
+
+function ListProperties({ properties, onUpdate }) {
 
     const navigate = useNavigate();
     const [priceCategory, setPriceCategory] = useState("All");
@@ -22,12 +24,9 @@ function ListProperties({ properties }) {
         setOperationCategory(value);
     };
 
-
-
-
-
-
-
+    useEffect(() => {
+        onUpdate(filteredProperties);
+    }, [onUpdate]);
 
     // Filter the property list based on the selected price category, type category, and operation category
     const filteredProperties = properties.filter((property) => {
@@ -40,16 +39,13 @@ function ListProperties({ properties }) {
         }
         return false;
     });
+
     console.log(filteredProperties.length);
-
-
-
-
-
     return (
 
-
         <div className="roomfac">
+            <h2 className='filterFormh2'>Discover your perfect home</h2>
+            <hr className="style1" />
             <Filter
                 priceCategory={priceCategory}
                 onPriceCategoryChange={handlePriceChange}
@@ -58,7 +54,6 @@ function ListProperties({ properties }) {
                 operationCategory={operationCategory}
                 onOperationCategoryChange={handleOperationChange}
                 filteredProperties={filteredProperties}
-
             />
             {properties.map((property) => {
                 return (
@@ -69,9 +64,12 @@ function ListProperties({ properties }) {
                         }}
                     >
                         <PropertyCards key={property.id} address={property.address} city={property.city} state={property.state} zip_code={property.zip_code} listing_price={property.listing_price} bedrooms={property.bedrooms} bathrooms={property.bathrooms} square_feet={property.square_feet} listing_date={property.listing_date} image={property.image} property_type={property.property_type} operation_type={property.operation_type} />{" "}
+
                     </div>
+
                 );
             })}
+            <FooterHome />
         </div>
     );
 }

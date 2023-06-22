@@ -4,13 +4,12 @@ import "./App.css";
 import Container from 'react-bootstrap/Container';
 import Home from "./components/Home";
 import Properties from './components/Properties'
-
 import AddProperty from "./components/AddProperty";
 import PropertyDisplay from "./components/PropertyDisplay";
 import ListProperties from "./components/ListProperties";
 import Spinner from 'react-bootstrap/Spinner';
 
-export function App() {
+ function App() {
   const [properties, setProperties] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 

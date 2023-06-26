@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -8,7 +8,7 @@ import Filter from "./Filter";
 import FooterHome from './FooterHome';
 
 
-function ListProperties({ properties, onUpdate }) {
+function ListProperties({ properties, setProperties }) {
 
     const navigate = useNavigate();
     const [priceCategory, setPriceCategory] = useState("All");
@@ -27,6 +27,13 @@ function ListProperties({ properties, onUpdate }) {
         setOperationCategory(value);
     };
 
+    function handleDeleteItem(deletedItem) {
+        const updatedItems = properties.filter((item) => item.id !== deletedItem.id);
+        setProperties(updatedItems);
+      }
+
+
+
 
 
     // Filter the property list based on the selected price category, type category, and operation category
@@ -40,6 +47,15 @@ function ListProperties({ properties, onUpdate }) {
         }
         return false;
     });
+
+
+
+
+
+
+
+
+
 
     console.log(filteredProperties.length);
     return (
@@ -66,7 +82,7 @@ function ListProperties({ properties, onUpdate }) {
                                         navigate(`/products/${property.id}`);
                                     }}
                                 >
-                                    <PropertyCards key={property.id} address={property.address} city={property.city} state={property.state} zip_code={property.zip_code} listing_price={property.listing_price} bedrooms={property.bedrooms} bathrooms={property.bathrooms} square_feet={property.square_feet} listing_date={property.listing_date} image={property.image} property_type={property.property_type} operation_type={property.operation_type} />{" "}
+                                    <PropertyCards property={property} onDeleteItem={handleDeleteItem} key={property.id} address={property.address} city={property.city} state={property.state} zip_code={property.zip_code} listing_price={property.listing_price} bedrooms={property.bedrooms} bathrooms={property.bathrooms} square_feet={property.square_feet} listing_date={property.listing_date} image={property.image} property_type={property.property_type} operation_type={property.operation_type} />{" "}
                                 </div>
                             );
                         })}

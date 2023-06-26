@@ -29,6 +29,21 @@ import NavigationBar from "./components/NavigationBar";
     be a delay in the response to the first request after a period of inactivity
     while the instance spins up.</h6>
 
+
+
+function handleAddProperty(newProperty) {
+  setProperties([...properties, newProperty]);
+}
+
+function handleDeleteItem(deletedproperty) {
+  const updatedItems = properties.filter((property) => property.id !== deletedproperty.id);
+  setProperties(updatedItems);
+}
+
+
+
+
+
   return (
     <Container fluid>
 <NavigationBar/>
@@ -37,8 +52,8 @@ import NavigationBar from "./components/NavigationBar";
 
         <Route path="products" element={<Properties properties={properties} />}>
           <Route path="list" element={<ListProperties properties={properties} />} />
-          <Route path="add" element={<AddProperty properties={properties} />} />
-          <Route path=":id" element={<PropertyDisplay properties={properties} />} />
+          <Route path="add" element={<AddProperty onhandleAddProperty={handleAddProperty} setProperties={setProperties} />} />
+          <Route path=":id" element={<PropertyDisplay properties={properties} onhandleDeleteItem={handleDeleteItem} />} />
         </Route>
       </Routes>
     </Container>

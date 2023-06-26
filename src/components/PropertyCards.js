@@ -1,6 +1,12 @@
 import Card from 'react-bootstrap/Card';
 
 function Cards({ address, city, state, zip_code, listing_price, bedrooms, bathrooms, square_feet, listing_date, image, property_type, operation_type, likes, Property_details, amenities }) {
+    
+    
+    
+    
+    
+    
     return (
         <Card style={{ width: '25rem' }}>
             <Card.Img variant="top" src={image} />
@@ -15,9 +21,6 @@ function Cards({ address, city, state, zip_code, listing_price, bedrooms, bathro
                 <Card.Text>
                     {address},{city},  {state} {zip_code}
                 </Card.Text>
-
-
-
             </Card.Body>
         </Card>
     )

@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import DeleteBtn from './DeleteBtn';
 import ViewBtn from './ViewBtn';
 import FooterHome from "./FooterHome";
@@ -11,6 +14,10 @@ import FooterHome from "./FooterHome";
 function PropertyDisplay({ properties }) {
     const { id } = useParams();
     return (
+        <Container>
+        <Row>
+          <Col>
+
         <div className="roomfac">
             <Card style={{ width: '35rem' }}>
                 <Card.Img variant="top" src={properties[id - 1].image}  />
@@ -35,8 +42,14 @@ function PropertyDisplay({ properties }) {
                     </ButtonToolbar>
                 </Card.Body>
             </Card>
-            <FooterHome/>
+            
         </div>
+        <>
+        <FooterHome/>
+        </>
+        </Col>
+      </Row>
+    </Container>
     );
 }
 

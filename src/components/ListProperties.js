@@ -1,5 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import PropertyCards from "./PropertyCards";
 import Filter from "./Filter";
 import FooterHome from './FooterHome';
@@ -24,9 +27,7 @@ function ListProperties({ properties, onUpdate }) {
         setOperationCategory(value);
     };
 
-    useEffect(() => {
-        onUpdate(filteredProperties);
-    }, [onUpdate]);
+
 
     // Filter the property list based on the selected price category, type category, and operation category
     const filteredProperties = properties.filter((property) => {
@@ -42,35 +43,41 @@ function ListProperties({ properties, onUpdate }) {
 
     console.log(filteredProperties.length);
     return (
-
-        <div className="roomfac">
-            <h2 className='filterFormh2'>Discover your perfect home</h2>
-            <hr className="style1" />
-            <Filter
-                priceCategory={priceCategory}
-                onPriceCategoryChange={handlePriceChange}
-                typeCategory={typeCategory}
-                onTypeCategoryChange={handleTypeChange}
-                operationCategory={operationCategory}
-                onOperationCategoryChange={handleOperationChange}
-                filteredProperties={filteredProperties}
-            />
-            {properties.map((property) => {
-                return (
-                    <div
-                        key={property.id}
-                        onClick={() => {
-                            navigate(`/products/${property.id}`);
-                        }}
-                    >
-                        <PropertyCards key={property.id} address={property.address} city={property.city} state={property.state} zip_code={property.zip_code} listing_price={property.listing_price} bedrooms={property.bedrooms} bathrooms={property.bathrooms} square_feet={property.square_feet} listing_date={property.listing_date} image={property.image} property_type={property.property_type} operation_type={property.operation_type} />{" "}
+        <Container>
+            <Row>
+                <Col>
+                    <div className="roomfac">
+                        <h2 className='filterFormh2'>Discover your perfect home</h2>
+                        <hr className="style1" />
+                        <Filter
+                            priceCategory={priceCategory}
+                            onPriceCategoryChange={handlePriceChange}
+                            typeCategory={typeCategory}
+                            onTypeCategoryChange={handleTypeChange}
+                            operationCategory={operationCategory}
+                            onOperationCategoryChange={handleOperationChange}
+                            filteredProperties={filteredProperties}
+                        />
+                        {properties.map((property) => {
+                            return (
+                                <div
+                                    key={property.id}
+                                    onClick={() => {
+                                        navigate(`/products/${property.id}`);
+                                    }}
+                                >
+                                    <PropertyCards key={property.id} address={property.address} city={property.city} state={property.state} zip_code={property.zip_code} listing_price={property.listing_price} bedrooms={property.bedrooms} bathrooms={property.bathrooms} square_feet={property.square_feet} listing_date={property.listing_date} image={property.image} property_type={property.property_type} operation_type={property.operation_type} />{" "}
+                                </div>
+                            );
+                        })}
 
                     </div>
-
-                );
-            })}
-            <FooterHome />
-        </div>
+                    <>
+                        <FooterHome />
+                    </>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 export default ListProperties;

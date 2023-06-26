@@ -12,7 +12,7 @@ export default function AddProperty() {
   console.log(errors);
 
   return (
-    <Container fluid>
+    <Container>
       <Row className="roomfac">
         <Col>
         <h2 className='filterFormh2'>Add  Your Apartment, Hotel, Holiday Home or B&B</h2>

@@ -106,12 +106,7 @@ body {
     transition: 0.3s all;
   }
   
-  button[type="submit"],
-  input[type="button"],
-  input[type="submit"] {
-    -webkit-appearance: none;
-  }
-  
+
   .App {
     max-width: 600px;
     margin: 0 auto;

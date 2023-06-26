@@ -14,12 +14,10 @@ import NavigationBar from "./components/NavigationBar";
   const [properties, setProperties] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const handleArrayUpdate = (filteredProperties) => {
-    setProperties(filteredProperties);
-  };
+
 
   useEffect(() => {
-    fetch("https://phase2-db.onrender.com/properties")
+    fetch(`https://phase2-db.onrender.com/properties`)
       .then((response) => response.json())
       .then((properties) => {
         setProperties(properties);
@@ -38,7 +36,7 @@ import NavigationBar from "./components/NavigationBar";
         <Route path="/" element={<Home />} />
 
         <Route path="products" element={<Properties properties={properties} />}>
-          <Route path="list" element={<ListProperties properties={properties} onUpdate={handleArrayUpdate}/>} />
+          <Route path="list" element={<ListProperties properties={properties} />} />
           <Route path="add" element={<AddProperty properties={properties} />} />
           <Route path=":id" element={<PropertyDisplay properties={properties} />} />
         </Route>

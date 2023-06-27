@@ -63,11 +63,7 @@ function Filter({
                     </Form.Select>
 
                 </Row>
-                <input
-                    style={{ display: "block", marginTop: 2 }}
-                    type="reset"
-                    value="Standard Reset Field Values"
-                />
+ 
             </Form>
             <hr className="style1" />
 

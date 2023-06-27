@@ -1,12 +1,16 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import './AddProperty.css';
+import { useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import './AddProperty.css';
 
-export default function AddProperty({onhandleAddProperty}) {
+
+export default function AddProperty({onhandleAddProperty, onQuery }) {
+  const history = useNavigate();
+  
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = (data) => {
     fetch(`https://phase2-db.onrender.com/properties`, {
@@ -18,6 +22,8 @@ export default function AddProperty({onhandleAddProperty}) {
     })
       .then((r) => r.json())
       .then((newProperty) => onhandleAddProperty(newProperty));
+      history('/properties/list');
+      
   }
   console.log(errors);
   

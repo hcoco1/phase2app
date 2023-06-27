@@ -15,13 +15,13 @@ function ViewBtn({properties}) {
   return (
     <>
       <Button className='btn-view' size="sm" variant="primary" onClick={handleShow}>
-        View
+        View more images
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>
-           For {properties[id - 1].operation_type} <strong>{properties[id - 1].property_type}</strong>
+           For {properties[id - 1]?.operation_type} <strong>{properties[id - 1]?.property_type}</strong>
             </Modal.Title>
         </Modal.Header>
         <Modal.Body>

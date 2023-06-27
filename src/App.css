@@ -28,7 +28,7 @@ a {
   font-size: 25px;
 }
 .linkNav {
-  color: rgb(49, 33, 33);
+  color: rgb(53, 81, 97);
   font-size: 20px;
   margin-right: 10%;
   margin-left: 10%;
@@ -117,7 +117,6 @@ hr.style1 {
 h2.filterFormh2 {
   text-align: center;
   padding-bottom: 0%;
-
   margin: auto;
 }
 
@@ -127,3 +126,33 @@ h2.filterFormh2 {
   margin: 1%;
   padding-top: 0%;
 }
+
+.btnViewPro {
+  width: auto;
+}
+
+
+.submitBtn {
+  background-color: #11be7e;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+ .filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  
+ }
+
+.drop-1, .drop-2, .drop-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+

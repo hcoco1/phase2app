@@ -4,7 +4,7 @@ function NavigationBar() {
     return(
         <nav>
         <Link className="linkNav" to="/"> Home </Link>
-        <Link className="linkNav" to="products/list"> Properties </Link>
+        <Link className="linkNav" to="properties/list"> Properties </Link>
       </nav>
     )
 }

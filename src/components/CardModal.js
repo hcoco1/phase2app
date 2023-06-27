@@ -7,11 +7,11 @@ function CardModal({properties}) {
   return (
     <>
       <Card>
-      <Carousel>
+      <Carousel className='viewBtn'>
       <Carousel.Item>
         <img
-          className="d-block w-100"
-          src="https://picsum.photos/200/300?random=1"
+          className="d-block w-200"
+          src="https://picsum.photos/400?random=1"
           alt="First slide"
         />
         <Carousel.Caption>
@@ -21,8 +21,8 @@ function CardModal({properties}) {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
-          src="https://picsum.photos/200/300?random=2"
+          className="d-block w-200"
+          src="https://picsum.photos/400?random=2"
           alt="Second slide"
         />
 
@@ -33,8 +33,8 @@ function CardModal({properties}) {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
-          src="https://picsum.photos/200/300?random=3"
+          className="d-block w-200"
+          src="https://picsum.photos/400?random=3"
           alt="Third slide"
         />
 

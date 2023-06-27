@@ -1,9 +1,4 @@
-body {
-    
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-      sans-serif;
-  }
+
   
   form {
     max-width: 500px;
@@ -18,35 +13,13 @@ body {
     border-bottom: 1px solid rgb(79, 98, 148);
   }
   
-  .myform {
-   
-    max-width: 400px;
-    margin: 0 auto;
-    border: 2px solid rgb(148, 147, 147);
-    margin-bottom: 5%;
-  }
-
-  .myform input {
-    max-width: 400px;
-   }
-
-   .agentForm {
-    max-width: 400px;
-    border-style: none;
-    color: #747070;
-    padding-left: 3%;
-    padding-bottom: 3%;
-    font-size: 14px;
-   
-   }
 
 
 
-  
-  p {
-    color: #814d5f;
-  }
-  
+
+
+
+
 
   
   input {
@@ -60,20 +33,11 @@ body {
     font-size: 14px;
   }
   
-  label {
-    line-height: 2;
-    text-align: left;
-    display: block;
-    margin-bottom: 13px;
-    margin-top: 20px;
-    color: white;
-    font-size: 14px;
-    font-weight: 200;
-  }
+
   
   button[type="submit"],
   input[type="submit"] {
-    background: #ec5990;
+    background: #9e526b;
     color: white;
     text-transform: uppercase;
     border: none;
@@ -86,7 +50,7 @@ body {
   
   button[type="submit"]:hover,
   input[type="submit"]:hover {
-    background: #bf1650;
+    background: #af8896;
   }
   
   button[type="submit"]:active,
@@ -98,43 +62,11 @@ body {
     opacity: 0.8;
   }
   
-  input:disabled {
-    opacity: 0.4;
-  }
+
   
   input[type="button"]:hover {
     transition: 0.3s all;
   }
   
 
-  .App {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  button[type="button"] {
-    display: block;
-    appearance: none;
-    background: #333;
-    color: white;
-    border: none;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border-radius: 4px;
-  }
-  
-  hr {
-    margin-top: 30px;
-  }
-  
-  button {
-    display: block;
-    appearance: none;
-    margin-top: 40px;
-    border: 1px solid #333;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border-radius: 4px;
-  }
-  
+

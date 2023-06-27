@@ -1,21 +1,17 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { useParams } from "react-router-dom";
+import Properties from './Properties';
 
 
-function DeleteBtn({properties,  onDeleteproperty, property} ) {
+function DeleteBtn() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const { id } = useParams();
 
 
-  function handleDeleteClick() {
-    fetch(`https://phase2-db.onrender.com/${properties.id}`, {
-      method: "DELETE",
-    })
-      .then((r) => r.json())
-      .then(() => onDeleteproperty(property));
-  }
 
   return (
     <>
@@ -31,9 +27,13 @@ function DeleteBtn({properties,  onDeleteproperty, property} ) {
             <p>Important: This property, and all the reporting views in the property, will be permanently deleted!</p>
             </Modal.Body>
             <Modal.Footer>
-           <Button variant="primary" onClick={handleDeleteClick} >
+           <Button variant="danger" onClick={handleClose}>
           Understood
           </Button>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          
         </Modal.Footer>
       </Modal>
     </>

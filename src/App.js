@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import "./App.css";
 import Container from 'react-bootstrap/Container';
 import Home from "./components/Home";
@@ -9,14 +11,18 @@ import PropertyDisplay from "./components/PropertyDisplay";
 import ListProperties from "./components/ListProperties";
 import Spinner from 'react-bootstrap/Spinner';
 import NavigationBar from "./components/NavigationBar";
+import { NoMatch } from "./components/NoMatch";
+
 
  function App() {
+  const history = useNavigate();
+  const { id } = useParams();
+
   const [properties, setProperties] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [filteredProperties, setFilteredProperties] = useState([]);//=> check
 
-
-
-  useEffect(() => {
+   useEffect(() => {
     fetch(`https://phase2-db.onrender.com/properties`)
       .then((response) => response.json())
       .then((properties) => {
@@ -30,15 +36,25 @@ import NavigationBar from "./components/NavigationBar";
     while the instance spins up.</h6>
 
 
-
 function handleAddProperty(newProperty) {
   setProperties([...properties, newProperty]);
 }
 
-function handleDeleteItem(deletedproperty) {
-  const updatedItems = properties.filter((property) => property.id !== deletedproperty.id);
-  setProperties(updatedItems);
+function handleDeletedProperty(deleteProperty) {
+   console.log("APP component:", deleteProperty);
+  const updatedProperties = properties.filter((property) => property.id !== deleteProperty.id);
+  setProperties(updatedProperties);
 }
+
+const handleArrayUpdate = (filteredProperties) => {//=> check
+  console.log("APP filteredProperties:", filteredProperties);
+  const copiedArray = [...filteredProperties];
+  console.log("APP copiedArray:", copiedArray);
+  
+  }
+ 
+
+
 
 
 
@@ -49,11 +65,11 @@ function handleDeleteItem(deletedproperty) {
 <NavigationBar/>
       <Routes>
         <Route path="/" element={<Home />} />
-
-        <Route path="products" element={<Properties properties={properties} />}>
-          <Route path="list" element={<ListProperties properties={properties} />} />
+        <Route path="/properties/*" element={<Properties properties={properties} />}>
+          <Route path="list" element={<ListProperties properties={properties} onUpdate={handleArrayUpdate} filteredProperties={filteredProperties} />} />
           <Route path="add" element={<AddProperty onhandleAddProperty={handleAddProperty} setProperties={setProperties} />} />
-          <Route path=":id" element={<PropertyDisplay properties={properties} onhandleDeleteItem={handleDeleteItem} />} />
+          <Route path=":id" element={<PropertyDisplay properties={properties} onhandleDeletedProperty={handleDeletedProperty} />} />
+          <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
     </Container>

@@ -48,19 +48,12 @@ function handleDeletedProperty(deleteProperty) {
 
 const handleArrayUpdate = (filteredProperties) => {//=> check
   console.log("APP filteredProperties:", filteredProperties);
-  const copiedArray = [...filteredProperties];
-  console.log("APP copiedArray:", copiedArray);
+  //const copiedArray = [...filteredProperties];
+ // console.log("APP copiedArray:", copiedArray);
+ setProperties(filteredProperties)
   
   }
- 
-
-
-
-
-
-
-
-  return (
+   return (
     <Container fluid>
 <NavigationBar/>
       <Routes>

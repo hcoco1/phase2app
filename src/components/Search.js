@@ -1,8 +1,6 @@
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
-
-
 function Search({ handlePrice, price, handleType, type, handleOperation, operation }) {
   return (
     <>
@@ -62,10 +60,6 @@ function Search({ handlePrice, price, handleType, type, handleOperation, operati
       </DropdownButton>
       <p> <strong> {operation} $</strong> </p>
 </div>
-
-
-
-
     </>
 
   );

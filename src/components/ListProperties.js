@@ -1,46 +1,28 @@
-
 import React, { useState, useEffect } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import PropertyCards from "./PropertyCards";
-import Filter from "./Filter";
 import FooterHome from './FooterHome';
 import Search from './Search';
 
 function ListProperties({ properties, onUpdate }) {
-    {/*} const handleFormSubmit = data => {
-        const priceCategory = data.prices;
-        const typeCategory = data.types;
-        const operationCategory = data.operations;
-        const filteredProperties = properties.filter((property) => {
-            if (
-                (priceCategory === "All" || property.listing_price < parseInt(priceCategory)) &&
-                (typeCategory === "All" || property.property_type === typeCategory) &&
-                (operationCategory === "All" || (operationCategory === "sale" && property.operation_type === "Sale") || (operationCategory === "rent" && property.operation_type === "Rent"))
-            ) {
-                return true;
-            }
-            return false;
-        });
-        onUpdate(filteredProperties);
-    };*/}
     const [price, setPrice] = useState('All');
     const [type, setType] = useState('All');
     const [operation, setOperation] = useState('All');
 
     const handlePrice = (e) => {
-        console.log(e);
+        // console.log(e);
         setPrice(e)
     }
 
     const handleType = (e) => {
-        console.log(e);
+        // console.log(e);
         setType(e)
     }
 
     const handleOperation = (e) => {
-        console.log(e);
+        //console.log(e);
         setOperation(e)
     }
 
@@ -56,8 +38,10 @@ function ListProperties({ properties, onUpdate }) {
         return false;
     });
 
+    useEffect(() => {
     onUpdate(filteredProperties)
-    console.log("ListProperties filteredProperties:", filteredProperties)
+}, [filteredProperties]);
+    //console.log("ListProperties filteredProperties:", filteredProperties)
 
     return (
         <Container>

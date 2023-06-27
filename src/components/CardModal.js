@@ -52,5 +52,4 @@ function CardModal({properties}) {
     </>
   );
 }
-
 export default CardModal;

@@ -41,5 +41,4 @@ function CarouselHome() {
     </Carousel>
   );
 }
-
 export default CarouselHome;

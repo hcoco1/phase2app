@@ -15,6 +15,7 @@ import FooterHome from "./FooterHome";
 function PropertyDisplay({ properties, onhandleDeletedProperty  }) {
     const { id } = useParams();
     const history = useNavigate();
+    console.log(properties[id - 1])
 
     function handleDeleteClick() {
         // Call onDeleteItem, passing the deleted item
@@ -23,7 +24,7 @@ function PropertyDisplay({ properties, onhandleDeletedProperty  }) {
         })
           .then((r) => r.json())
           .then(() => onhandleDeletedProperty(properties[id - 1]));
-          history('/properties/list');
+          //history('/properties/list');
           
       } 
 

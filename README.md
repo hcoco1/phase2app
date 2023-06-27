@@ -10,7 +10,7 @@ App
     ├── FooterHome
     ListProperties
     ├── Search
-    └── PropertyCards
+    ├── PropertyCards
     AddProperty
     │
     PropertyDisplay
@@ -19,9 +19,9 @@ App
 
 
 
-    ISSUES:
+    ISSUES: Updating State
 
-1.- Updating Elements in Arrays in State => 
+1.- Updating Elements in filtered Array in State => 
                         Infinite loop:
                                 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
 	-COMPONENT: function ListProperties()

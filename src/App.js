@@ -47,10 +47,10 @@ function handleDeletedProperty(deleteProperty) {
 }
 
 const handleArrayUpdate = (filteredProperties) => {//=> check
-  console.log("APP filteredProperties:", filteredProperties);
-  //const copiedArray = [...filteredProperties];
+  //console.log("APP filteredProperties:", filteredProperties);
+  const updatedProperties = [...filteredProperties];
  // console.log("APP copiedArray:", copiedArray);
- setProperties(filteredProperties)
+ setProperties(updatedProperties)
   
   }
    return (

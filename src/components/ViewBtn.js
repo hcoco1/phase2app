@@ -21,10 +21,12 @@ function ViewBtn({ properties }) {
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>
-            For {properties[id - 1]?.operation_type} <strong>{properties[id - 1]?.property_type}</strong>
+             <strong>{properties[id - 1]?.property_type}</strong> For {properties[id - 1]?.operation_type}  ${properties[id - 1]?.listing_price}
           </Modal.Title>
         </Modal.Header>
+       
         <Modal.Body>
+          
           <CardModal properties={properties} />
         </Modal.Body>
         <Modal.Footer>

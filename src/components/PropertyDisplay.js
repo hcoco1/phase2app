@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { FcSearch } from "react-icons/fc";
 import Card from 'react-bootstrap/Card';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
@@ -12,7 +14,9 @@ import ViewBtn from './ViewBtn';
 import FooterHome from "./FooterHome";
 
 
+
 function PropertyDisplay({ properties, onhandleDeletedProperty, property }) {
+
     const { id } = useParams();
     const history = useNavigate();
     console.log(property)
@@ -35,6 +39,10 @@ function PropertyDisplay({ properties, onhandleDeletedProperty, property }) {
                 <Col>
 
                     <div className="roomfac">
+                        <hr className="style1" />
+                        <h4>Let's take a closer look of this {properties[id - 1]?.property_type}</h4>
+
+                        <hr className="style1" />
                         <Card style={{ width: '35rem' }}>
                             <Card.Img variant="top" src={properties[id - 1]?.image} />
                             <Card.Body>
@@ -51,12 +59,16 @@ function PropertyDisplay({ properties, onhandleDeletedProperty, property }) {
                                 <ButtonToolbar aria-label="Toolbar with button groups">
                                     <ButtonGroup className="me-0" aria-label="First group">
                                         <ViewBtn properties={properties} />
+                                                                            </ButtonGroup>
+                                    <ButtonGroup className="me-1" aria-label="Second group">
+                                        <Button className="deleteBtn" variant="primary" onClick={handleDeleteClick}>Delete Property</Button>{' '}
                                     </ButtonGroup>
-                                    <ButtonGroup className="me-0" aria-label="First group">
-                                        <Button variant="danger" onClick={handleDeleteClick}>Delete Property</Button>{' '}
+                                    <ButtonGroup className="me-2" aria-label="Third group">
+                                    <Link className="linkproperties1" to="/properties/list"><FcSearch /> List </Link>
+                                    </ButtonGroup>
 
-                                    </ButtonGroup>
                                 </ButtonToolbar>
+
                             </Card.Body>
                         </Card>
                     </div>

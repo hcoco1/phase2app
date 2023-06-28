@@ -1,9 +1,8 @@
 import Card from 'react-bootstrap/Card';
-import { useParams } from "react-router-dom";
 import Carousel from 'react-bootstrap/Carousel';
 
-function CardModal({properties}) {
-    const { id } = useParams();
+function CardModal() {
+    
   return (
     <>
       <Card>
@@ -15,8 +14,7 @@ function CardModal({properties}) {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>${properties[id - 1].listing_price.toLocaleString()}</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+  
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -27,8 +25,7 @@ function CardModal({properties}) {
         />
 
         <Carousel.Caption>
-          <h3>${properties[id - 1].listing_price.toLocaleString()}</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+     
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -39,10 +36,7 @@ function CardModal({properties}) {
         />
 
         <Carousel.Caption>
-          <h3>${properties[id - 1].listing_price.toLocaleString()}</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+ 
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

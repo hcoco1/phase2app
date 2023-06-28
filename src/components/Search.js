@@ -11,7 +11,7 @@ function Search({resetForm, handlePrice, price, handleType, type, handleOperatio
           className='p-4 text-muted'
           title="Prices"
           id="dropdown-menu-align-left"
-          variant="success"
+          variant="primary"
           size="sm"
           onSelect={handlePrice}
         >
@@ -30,7 +30,7 @@ function Search({resetForm, handlePrice, price, handleType, type, handleOperatio
           className='p-4 text-muted'
           title="Type"
           id="dropdown-menu-align-center"
-          variant="warning"
+          variant="primary"
           size="sm"
           onSelect={handleType}
         >

@@ -12,7 +12,7 @@ function ListProperties({ properties, onUpdate }) {
     const [operation, setOperation] = useState('All');
 
     const handlePrice = (e) => {
-        // console.log(e);
+         console.log(e);
         setPrice(e)
     }
 
@@ -38,9 +38,7 @@ function ListProperties({ properties, onUpdate }) {
         return false;
     });
 
-    useEffect(() => {
-    onUpdate(filteredProperties)
-}, [filteredProperties]);
+
     //console.log("ListProperties filteredProperties:", filteredProperties)
 
     return (
@@ -57,13 +55,13 @@ function ListProperties({ properties, onUpdate }) {
 
 
                         <hr className="style1" />
-                        {properties.map((property) => {
+                        {filteredProperties.map((property) => {
                             return (
                                 <div
                                     key={property.id}
 
                                 >
-                                    <PropertyCards key={property.id} id={property.id} property={property} address={property.address} city={property.city} state={property.state} zip_code={property.zip_code} listing_price={property.listing_price} bedrooms={property.bedrooms} bathrooms={property.bathrooms} square_feet={property.square_feet} listing_date={property.listing_date} image={property.image} property_type={property.property_type} operation_type={property.operation_type} />{" "}
+                                    <PropertyCards key={property.id} onUpdate={onUpdate} id={property.id} property={property} address={property.address} city={property.city} state={property.state} zip_code={property.zip_code} listing_price={property.listing_price} bedrooms={property.bedrooms} bathrooms={property.bathrooms} square_feet={property.square_feet} listing_date={property.listing_date} image={property.image} property_type={property.property_type} operation_type={property.operation_type} />{" "}
                                 </div>
                             );
                         })}

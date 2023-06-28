@@ -43,7 +43,7 @@ App
     				├── ViewBtn()
     				     └── CardModal()
 
-CardModal() is ok?, The issue is in PropertyDisplay() and ViewBtn()
+CardModal() is ok, The issue is in PropertyDisplay() and ViewBtn()??
 
 Cannot read properties of undefined (reading 'image')
 TypeError: Cannot read properties of undefined (reading 'image')

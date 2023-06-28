@@ -12,19 +12,19 @@ import ViewBtn from './ViewBtn';
 import FooterHome from "./FooterHome";
 
 
-function PropertyDisplay({ properties, onhandleDeletedProperty  }) {
+function PropertyDisplay({ properties, onhandleDeletedProperty, property  }) {
     const { id } = useParams();
     const history = useNavigate();
-    console.log(properties[id - 1])
+    console.log(property)
 
     function handleDeleteClick() {
         // Call onDeleteItem, passing the deleted item
-        fetch(`https://phase2-db.onrender.com/properties/${properties[id - 1]}`, {
+        fetch(`https://phase2-db.onrender.com/properties/${property.id}`, {
           method: "DELETE",
         })
           .then((r) => r.json())
-          .then(() => onhandleDeletedProperty(properties[id - 1]));
-          //history('/properties/list');
+          .then(() => onhandleDeletedProperty(property.id));
+          history('/properties/list');
           
       } 
 

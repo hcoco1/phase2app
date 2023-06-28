@@ -9,10 +9,11 @@ import ProfileCard from "./ProfileCard";
 function Contact({ properties }) {
     const sortedProperties = [...properties]
     const [userData, setUserData] = useState({
-        labels: sortedProperties.sort((a, b) => a.city.localeCompare(b.city)).map((data) => data.city),
+        labels: sortedProperties.filter(data => data.state === 'Florida').sort((a, b) => a.city.localeCompare(b.city)).map(data => data.city),
+        
         datasets: [
             {
-                label: "Price by City",
+                label: "Price Trend by City",
                 data: properties.map((data) => data.listing_price),
                 backgroundColor: [
                     "rgba(75,192,192,1)",
@@ -39,7 +40,7 @@ function Contact({ properties }) {
                         <ProfileCard />
                     </>
                     <hr className="style1" />
-                    <h3 className="styleh3">Prices Trend by Cities </h3>
+                    <h3 className="styleh3">Prices Trend by Cities in Florida State. </h3>
 
                     <hr className="style1" />
                     <div>

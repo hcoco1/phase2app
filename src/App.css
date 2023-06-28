@@ -155,4 +155,8 @@ h2.filterFormh2 {
   flex-direction: column;
   align-items: center;
 }
+.resetBtn {
+  width: 60%;
+  background-color: rgb(48, 138, 198);
+}
 

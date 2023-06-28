@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+
+
 import "./App.css";
 import Container from 'react-bootstrap/Container';
 import Home from "./components/Home";
@@ -15,12 +15,11 @@ import { NoMatch } from "./components/NoMatch";
 
 
  function App() {
-  const history = useNavigate();
-  const { id } = useParams();
+ 
   const [currentProperty, setCurrentProperty] = useState({});
   const [properties, setProperties] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [filteredProperties, setFilteredProperties] = useState([]);//=> check
+
 
    useEffect(() => {
     fetch(`https://phase2-db.onrender.com/properties`)
@@ -36,8 +35,8 @@ import { NoMatch } from "./components/NoMatch";
     while the instance spins up.</h6>
 
 
-function handleAddProperty(newProperty) {
-  setProperties([...properties, newProperty]);
+function handleAddProperty(property) {
+  setProperties([...properties, property]);
 }
 
 function handleDeletedProperty() {
@@ -47,7 +46,6 @@ function handleDeletedProperty() {
 }
 
 const handleCurrentProperty = (property) => {//=> check
-
   setCurrentProperty({...property})
   
   }
@@ -56,9 +54,9 @@ const handleCurrentProperty = (property) => {//=> check
 <NavigationBar/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/properties/*" element={<Properties />}>
-          <Route path="list" element={<ListProperties properties={properties} onUpdate={handleCurrentProperty}  />} />
-          <Route path="add" element={<AddProperty onhandleAddProperty={handleAddProperty} setProperties={setProperties} />} />
+        <Route path="/properties/" element={<Properties />}>
+          <Route path="list/" element={<ListProperties properties={properties} onUpdate={handleCurrentProperty}  />} />
+          <Route path="add" element={<AddProperty  onhandleAddProperty={handleAddProperty} setProperties={setProperties} />} />
           <Route path=":id" element={<PropertyDisplay properties={properties} property={currentProperty} onhandleDeletedProperty={handleDeletedProperty} />} />
           <Route path="*" element={<NoMatch />} />
         </Route>

@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
-export default function AddProperty({ onhandleAddProperty, onQuery }) {
+export default function AddProperty({ onhandleAddProperty, property }) {
   const history = useNavigate();
 
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -20,7 +20,7 @@ export default function AddProperty({ onhandleAddProperty, onQuery }) {
       body: JSON.stringify(data),
     })
       .then((r) => r.json())
-      .then((newProperty) => onhandleAddProperty(newProperty));
+      .then((property) => onhandleAddProperty(property));
     history('/properties/list');
 
   }

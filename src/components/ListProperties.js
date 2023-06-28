@@ -12,6 +12,7 @@ function ListProperties({ properties, onUpdate }) {
     const [type, setType] = useState('All');
     const [operation, setOperation] = useState('All');
 
+//Reset filter to all values using state
     const resetForm = () => {
         setPrice('All')
         setType('All')
@@ -54,8 +55,7 @@ function ListProperties({ properties, onUpdate }) {
                 <Col>
                     <div className="roomfac">
                         <hr className="style1" />
-
-                        <h5>Found <strong>{filteredProperties.length}</strong> matching properties</h5>
+                        <h3 className="styleh3">Found <strong>{filteredProperties.length}</strong> matching properties</h3>
                         <hr className="style1" />
                         <h6> <strong>Filter by:</strong></h6>
                         <Search resetForm ={resetForm } handlePrice={handlePrice} price={price} handleType={handleType} type={type} handleOperation={handleOperation} operation={operation} />

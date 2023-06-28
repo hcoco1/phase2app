@@ -42,7 +42,7 @@ function Search({resetForm, handlePrice, price, handleType, type, handleOperatio
           <Dropdown.Item eventKey="Townhome">Townhome</Dropdown.Item>
           <Dropdown.Item eventKey="House">House</Dropdown.Item>
         </DropdownButton>
-        <p> <strong>{type} $</strong> </p>
+        <p> <strong>{type}</strong> </p>
       </div>
 
       <div className='drop-3'>
@@ -60,7 +60,7 @@ function Search({resetForm, handlePrice, price, handleType, type, handleOperatio
           <Dropdown.Item eventKey="Rent">Rent</Dropdown.Item>
 
         </DropdownButton>
-        <p> <strong> {operation} $</strong> </p>
+        <p> <strong> {operation}</strong> </p>
       </div>
       <input className='resetBtn' type="button" value="Get All Properties" onClick={() => resetForm()}/>
       

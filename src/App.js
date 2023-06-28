@@ -7,16 +7,18 @@ import Properties from './components/Properties'
 import AddProperty from "./components/AddProperty";
 import PropertyDisplay from "./components/PropertyDisplay";
 import ListProperties from "./components/ListProperties";
+import Contact from './components/Contact';
 import Spinner from 'react-bootstrap/Spinner';
 import NavigationBar from "./components/NavigationBar";
 import { NoMatch } from "./components/NoMatch";
 
 
+
  function App() {
- 
-  const [currentProperty, setCurrentProperty] = useState({});
+   const [currentProperty, setCurrentProperty] = useState({});
   const [properties, setProperties] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
+
 
 
    useEffect(() => {
@@ -25,7 +27,6 @@ import { NoMatch } from "./components/NoMatch";
       .then((properties) => {
         setProperties(properties);
         setIsLoaded(true);
-
       });
   }, []);
   if (!isLoaded) return <h6 className="loadinmessage"><Spinner animation="border" /> Loading...Because this App is using a free web service as a database, there will
@@ -52,8 +53,9 @@ const handleCurrentProperty = (property) => {//=> check
 <NavigationBar/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="contact" element={<Contact properties={properties} />}></Route>
         <Route path="/properties/" element={<Properties />}>
-          <Route path="list/" element={<ListProperties properties={properties} onUpdate={handleCurrentProperty}  />} />
+          <Route path="list" element={<ListProperties properties={properties} onUpdate={handleCurrentProperty}  />} />
           <Route path="add" element={<AddProperty  onhandleAddProperty={handleAddProperty} setProperties={setProperties} />} />
           <Route path=":id" element={<PropertyDisplay properties={properties} property={currentProperty} onhandleDeletedProperty={handleDeletedProperty} />} />
           <Route path="*" element={<NoMatch />} />

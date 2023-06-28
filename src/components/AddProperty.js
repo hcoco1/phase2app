@@ -31,7 +31,7 @@ export default function AddProperty({ onhandleAddProperty, property }) {
       <Row>
         <Col>
           <hr className="style1" />
-          <h4 className="textaddpro">Let's Add a New Property</h4>
+          <h3 className="styleh3">Let's Add a New Property</h3>
           <hr className="style1" />
           <form onSubmit={handleSubmit(onSubmit)}>
             <input type="text" placeholder="Address" {...register("address", { required: true })} />

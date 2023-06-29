@@ -7,7 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 function NavigationBar() {
   return (
 
-    <Navbar collapseOnSelect expand="xxl" className="bg-body-tertiary " sticky="top" >
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" sticky="top" >
       <Container>
         <Navbar.Brand>
           <Link className="linkNav" to="/">Home</Link>

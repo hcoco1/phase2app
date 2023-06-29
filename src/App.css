@@ -27,7 +27,7 @@ nav {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  align-content: center;
+  align-content:center;
   color: rgb(168, 9, 9);
   text-decoration: none;
 }
@@ -42,8 +42,8 @@ nav {
 
 .productsNav a {
   font-size: 20px;
-  width: 300px;
-  height: 50px;
+  width: 200px;
+  height: 40px;
   background-color: rgb(11, 167, 229);
   border-radius: 5px;
   display: flex;
@@ -70,9 +70,8 @@ a {
 
 .linkproperties {
   color: rgb(120, 57, 57);
-  font-size: 25px;
-  margin-right: 10%;
-  margin-left: 10%;
+  font-size: 15px;
+
 }
 .linkproperties1 {
   margin: auto;
@@ -285,27 +284,27 @@ p {
 input {
   display: block;
   box-sizing: border-box;
-  width: 70%;
+  width: 100%;
   border-radius: 4px;
   border: 1px solid white;
   padding: 10px 15px;
   margin-bottom: 10px;
   font-size: 14px;
-  background: #b7ddee;
+  background: #ffffff;
   color: rgb(46, 43, 43);
 }
 
 select {
   display: block;
   box-sizing: border-box;
-  width: 70%;
+  width:100%;
   border-radius: 4px;
   border: 1px solid white;
   padding: 10px 15px;
   margin-bottom: 10px;
   font-size: 14px;
-  background: #b7ddee;
-  color: rgb(79, 75, 75);
+  background: #ffffff;
+  color: rgb(0, 0, 0);
 }
 
 label {
@@ -363,4 +362,28 @@ button[type="button"] {
   text-transform: uppercase;
   padding: 5px 10px;
   border-radius: 4px;
+}
+
+.striped-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.striped-table th,
+.striped-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.striped-table th {
+  background-color: #2d99e1;
+}
+
+.striped-table .even-row {
+  background-color: #d1cccc;
+}
+
+.striped-table .odd-row {
+  background-color: #ffffff;
 }

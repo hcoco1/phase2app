@@ -1,5 +1,7 @@
 import { useTable, useSortBy } from "react-table";
+import { useSticky } from "react-table-sticky";
 import React, { useState, useEffect } from "react";
+
 
 function Contact({ properties }) {
     const [data, setData] = useState([]);
@@ -78,7 +80,8 @@ function Contact({ properties }) {
     headerGroups,
     rows,
     prepareRow,
-  } = useTable({ columns, data: searchResults }, useSortBy);
+  } = useTable({ columns, data: searchResults }, useSortBy, useSticky);
+  
 
   return (
     <div className="container" style={{ maxHeight: "1000px", overflowY: "auto" }}>
@@ -96,20 +99,17 @@ function Contact({ properties }) {
       <table {...getTableProps()} className="striped-table">
         <thead>
           {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                  {column.render("Header")}
-                  <span>
-                    {column.isSorted
-                      ? column.isSortedDesc
-                        ? " 🔽"
-                        : " 🔼"
-                      : ""}
-                  </span>
-                </th>
-              ))}
-            </tr>
+            <tr {...headerGroup.getHeaderGroupProps()} className="sticky">
+  {headerGroup.headers.map((column) => (
+    <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+      {column.render("Header")}
+      <span>
+        {column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : ""}
+      </span>
+    </th>
+  ))}
+</tr>
+
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>

@@ -387,3 +387,16 @@ button[type="button"] {
 .striped-table .odd-row {
   background-color: #ffffff;
 }
+.sticky {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.sticky th {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1;
+}

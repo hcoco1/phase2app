@@ -11,7 +11,7 @@ function Home() {
   return (
     <Container>
       <Row>
-        <Col>
+        <Col lg>
           <div className="home">
             <hr className="style1" />
             <h2 className='filterFormh2'>Let’s find a home that’s perfect for you</h2>

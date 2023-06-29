@@ -9,8 +9,7 @@ import ProfileCard from "./ProfileCard";
 function Contact({ properties }) {
     const sortedProperties = [...properties]
     const [userData, setUserData] = useState({
-        labels: sortedProperties.filter(data => data.state === 'Florida').sort((a, b) => a.city.localeCompare(b.city)).map(data => data.city),
-        
+        labels: sortedProperties.filter(data => data.state === 'Texas').sort((a, b) => a.city.localeCompare(b.city)).map(data => data.city),
         datasets: [
             {
                 label: "Price Trend by City",
@@ -25,29 +24,23 @@ function Contact({ properties }) {
                 borderColor: "black",
                 borderWidth: 1,
             },
+
         ],
     });
 
     return (
         <Container>
             <Row>
-                <Col>
-                    <>
-                        <hr className="style1" />
-                        <h3 className="styleh3">Meet our Agents </h3>
-
-                        <hr className="style1" />
-                        <ProfileCard />
-                    </>
+                <Col lg>
                     <hr className="style1" />
-                    <h3 className="styleh3">Prices Trend by Cities in Florida State. </h3>
-
+                    <h3 className="styleh3">Meet our Agents </h3>
                     <hr className="style1" />
-                    <div>
-                        <BarChart chartData={userData} />
-                    </div>
+                    <ProfileCard />
+                    <hr className="style1" />
+                    <h3 className="styleh3">Prices Trend by Cities in Texas State. </h3>
+                    <hr className="style1" />
+                    <BarChart chartData={userData} />
                 </Col>
-
             </Row>
         </Container>
 

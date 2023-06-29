@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import "./App.css";
 import Container from 'react-bootstrap/Container';
 import Home from "./components/Home";
@@ -14,14 +16,14 @@ import { NoMatch } from "./components/NoMatch";
 
 
 
- function App() {
-   const [currentProperty, setCurrentProperty] = useState({});
+function App() {
+  const [currentProperty, setCurrentProperty] = useState({});
   const [properties, setProperties] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
 
 
-   useEffect(() => {
+  useEffect(() => {
     fetch(`https://phase2-db.onrender.com/properties`)
       .then((response) => response.json())
       .then((properties) => {
@@ -34,33 +36,41 @@ import { NoMatch } from "./components/NoMatch";
     while the instance spins up.</h6>
 
 
-function handleAddProperty(property) {
-  setProperties([...properties, property]);
-}
-
-function handleDeletedProperty() {
-   //console.log("APP component:", deleteProperty);
-  const updatedProperties = properties.filter((property) => property.id !== currentProperty.id);
-  setProperties(updatedProperties);
-}
-
-const handleCurrentProperty = (property) => {//=> check
-  setCurrentProperty({...property})
-  
+  function handleAddProperty(property) {
+    setProperties([...properties, property]);
   }
-   return (
-    <Container fluid>
-<NavigationBar/>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="contact" element={<Contact properties={properties} />}></Route>
-        <Route path="/properties/" element={<Properties />}>
-          <Route path="list" element={<ListProperties properties={properties} onUpdate={handleCurrentProperty}  />} />
-          <Route path="add" element={<AddProperty  onhandleAddProperty={handleAddProperty} setProperties={setProperties} />} />
-          <Route path=":id" element={<PropertyDisplay properties={properties} property={currentProperty} onhandleDeletedProperty={handleDeletedProperty} />} />
-          <Route path="*" element={<NoMatch />} />
-        </Route>
-      </Routes>
+
+  function handleDeletedProperty() {
+    //console.log("APP component:", deleteProperty);
+    const updatedProperties = properties.filter((property) => property.id !== currentProperty.id);
+    setProperties(updatedProperties);
+  }
+
+  const handleCurrentProperty = (property) => {//=> check
+    setCurrentProperty({ ...property })
+
+  }
+  return (
+    <Container>
+      <Row>
+        <Col lg>
+          <NavigationBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="contact" element={<Contact properties={properties} />}></Route>
+            <Route path="/properties/" element={<Properties />}>
+              <Route path="list" element={<ListProperties properties={properties} onUpdate={handleCurrentProperty} />} />
+              <Route path="add" element={<AddProperty onhandleAddProperty={handleAddProperty} setProperties={setProperties} />} />
+              <Route path=":id" element={<PropertyDisplay properties={properties} property={currentProperty} onhandleDeletedProperty={handleDeletedProperty} />} />
+              <Route path="*" element={<NoMatch />} />
+            </Route>
+          </Routes>
+
+        </Col>
+
+
+      </Row>
+
     </Container>
 
 

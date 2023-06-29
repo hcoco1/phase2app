@@ -1,7 +1,13 @@
 import React from 'react'
 import { Card, Image } from 'semantic-ui-react'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const ProfileCard = () => (
+    <Container>
+    <Row>
+        <Col lg>
     <div className='profileCard'>
         <div className='profileCardLeft'>
 
@@ -45,6 +51,9 @@ const ProfileCard = () => (
         </div>
 
     </div>
+    </Col>
+            </Row>
+        </Container>
 
 )
 

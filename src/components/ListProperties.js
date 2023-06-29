@@ -52,7 +52,7 @@ function ListProperties({ properties, onUpdate }) {
     return (
         <Container>
             <Row>
-                <Col>
+                <Col lg>
                     <div className="roomfac">
                         <hr className="style1" />
                         <h3 className="styleh3">Found <strong>{filteredProperties.length}</strong> matching properties</h3>

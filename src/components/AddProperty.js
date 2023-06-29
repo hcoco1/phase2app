@@ -29,7 +29,7 @@ export default function AddProperty({ onhandleAddProperty, property }) {
   return (
     <Container>
       <Row>
-        <Col>
+        <Col lg>
           <hr className="style1" />
           <h3 className="styleh3">Let's Add a New Property</h3>
           <hr className="style1" />

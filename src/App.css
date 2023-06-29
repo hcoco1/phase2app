@@ -13,10 +13,11 @@ body {
 nav {
   margin: 0;
   width: 100%;
-  height: 80px;
+  max-height: auto;
   background-color: rgb(3, 34, 60);
   display: flex !important;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
   align-content: center;
   color: rgb(168, 9, 9);
@@ -29,14 +30,10 @@ a {
   font-size: 25px;
 }
 .linkNav {
-margin-top: 10%;
-  
-
   color: rgb(255, 255, 255);
   font-size: 25px;
   font-family: Roboto, Helvetica, Arial, sans-serif;
-  margin: 10%;
-
+  
 }
 
 .linkNav:hover {
@@ -125,18 +122,17 @@ margin-top: 10%;
 .me-0 {
   padding: 1%;
   margin: 10px;
-  }
+}
 
 .me-1 {
   padding: 1%;
   margin: 10px;
-  
 }
 
 .me-2 {
   padding: 1%;
   margin: 10px;
-  }
+}
 
 hr.style1 {
   border-top: 6px double #433f3f;
@@ -195,17 +191,18 @@ h5 {
 .styleh3 {
   text-align: center;
 }
-p{
+p {
   color: rgb(182, 113, 24) !important;
 }
 
-.profileCard, .profileCardRight, .profileCardLeft {
+.profileCard,
+.profileCardRight,
+.profileCardLeft {
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: center;
   padding: 5%;
-  
 }
 .home {
   height: 100vh;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import './AddProperty.css';
 import { useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -59,6 +58,7 @@ export default function AddProperty({ onhandleAddProperty, property }) {
 
             <input type="submit" />
           </form>
+          <hr className="style1" />
         </Col>
       </Row>
     </Container>

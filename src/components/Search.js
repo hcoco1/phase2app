@@ -1,18 +1,19 @@
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import { Button } from 'semantic-ui-react'
 
 
-function Search({resetForm, handlePrice, price, handleType, type, handleOperation, operation }) {
- 
+function Search({filteredProperties, resetForm, handlePrice, price, handleType, type, handleOperation, operation }) {
+
   return (
     <>
-      <div className='drop-1'>
+     
         <DropdownButton
           className='p-4 text-muted'
-          title="Prices"
+          title={price}
           id="dropdown-menu-align-left"
           variant="primary"
-          size="sm"
+          size="md"
           onSelect={handlePrice}
         >
           <Dropdown.Item eventKey="All">All Prices</Dropdown.Item>
@@ -21,17 +22,14 @@ function Search({resetForm, handlePrice, price, handleType, type, handleOperatio
           <Dropdown.Item eventKey="600000">+ than $600K</Dropdown.Item>
 
         </DropdownButton>
-        <p> <strong> {price} $</strong> </p>
-      </div>
-
-      <div className='drop-2'>
+         
 
         <DropdownButton
           className='p-4 text-muted'
-          title="Type"
+          title={type}
           id="dropdown-menu-align-center"
           variant="primary"
-          size="sm"
+          size="md"
           onSelect={handleType}
         >
           <Dropdown.Item eventKey="All">All Types</Dropdown.Item>
@@ -42,17 +40,17 @@ function Search({resetForm, handlePrice, price, handleType, type, handleOperatio
           <Dropdown.Item eventKey="Townhome">Townhome</Dropdown.Item>
           <Dropdown.Item eventKey="House">House</Dropdown.Item>
         </DropdownButton>
-        <p> <strong>{type}</strong> </p>
-      </div>
+       
+   
 
-      <div className='drop-3'>
+     
         <DropdownButton
 
           className='p-4 text-muted'
-          title="Operation"
+          title={operation}
           id="dropdown-menu-align-right"
           variant="primary"
-          size="sm"
+          size="md"
           onSelect={handleOperation}
         >
           <Dropdown.Item eventKey="All">All Operations</Dropdown.Item>
@@ -60,10 +58,16 @@ function Search({resetForm, handlePrice, price, handleType, type, handleOperatio
           <Dropdown.Item eventKey="Rent">Rent</Dropdown.Item>
 
         </DropdownButton>
-        <p> <strong> {operation}</strong> </p>
+       
+ 
+      <Button compact onClick={() => resetForm()}>
+        Reset values
+      </Button>
+      <div className='styleh3'>
+      <h3 >Found <strong>{filteredProperties.length}</strong> matching properties</h3>
       </div>
-      <input className='resetBtn' type="button" value="Get All Properties" onClick={() => resetForm()}/>
       
+
     </>
 
   );

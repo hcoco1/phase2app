@@ -1,7 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 body {
@@ -24,6 +32,26 @@ nav {
   text-decoration: none;
 }
 
+.productsNav {
+  width: 70%;
+  height: 80px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.productsNav a {
+  font-size: 20px;
+  width: 300px;
+  height: 50px;
+  background-color: rgb(11, 167, 229);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 a {
   text-decoration: none;
   margin: 10px;
@@ -31,9 +59,8 @@ a {
 }
 .linkNav {
   color: rgb(255, 255, 255);
-  font-size: 25px;
+  font-size: 20px;
   font-family: Roboto, Helvetica, Arial, sans-serif;
-  
 }
 
 .linkNav:hover {
@@ -61,26 +88,6 @@ a {
 
 .linkproperties1:hover {
   color: rgb(9, 235, 133);
-}
-
-.productsNav {
-  width: 70%;
-  height: 80px;
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-}
-
-.productsNav a {
-  font-size: 20px;
-  width: 300px;
-  height: 50px;
-  background-color: rgb(11, 167, 229);
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
 }
 
 .listOfProducts {
@@ -111,6 +118,17 @@ a {
   width: 100%;
   max-width: 100%;
   margin: 0;
+  justify-content: center;
+}
+
+.roomcontact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+
+  margin: auto;
   justify-content: center;
 }
 
@@ -152,10 +170,6 @@ h2.filterFormh2 {
   padding-top: 0%;
 }
 
-.btnViewPro {
-  width: auto;
-}
-
 .submitBtn {
   background-color: #11be7e;
   border: none;
@@ -189,21 +203,159 @@ h5 {
   margin: 0% !important;
 }
 .styleh3 {
+  display: block;
   text-align: center;
+  margin-left: 2%;
 }
 p {
   color: rgb(182, 113, 24) !important;
 }
 
-.profileCard,
-.profileCardRight,
-.profileCardLeft {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  padding: 5%;
-}
 .home {
   height: 100vh;
+}
+
+.filterZone {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+}
+
+table {
+  width: 800px;
+  height: 800px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+th,
+td {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #7f1414;
+}
+th {
+  text-align: left;
+}
+thead th {
+  background-color: #55608f;
+}
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+tbody td {
+  position: relative;
+}
+tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+}
+/* addProperty form*/
+form {
+  max-width: 400px;
+  margin: auto;
+}
+
+h1 {
+  font-weight: 100;
+  color: white;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(79, 98, 148);
+}
+
+p {
+  color: #fefefe;
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+  width: 70%;
+  border-radius: 4px;
+  border: 1px solid white;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  background: #b7ddee;
+  color: rgb(46, 43, 43);
+}
+
+select {
+  display: block;
+  box-sizing: border-box;
+  width: 70%;
+  border-radius: 4px;
+  border: 1px solid white;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  background: #b7ddee;
+  color: rgb(79, 75, 75);
+}
+
+label {
+  line-height: 2;
+  text-align: left;
+  display: block;
+  margin-bottom: 13px;
+  margin-top: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 200;
+}
+
+button[type="submit"],
+input[type="submit"] {
+  background: #ec5990;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 10px;
+}
+
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  background: #bf1650;
+}
+
+button[type="submit"]:active,
+input[type="button"]:active,
+input[type="submit"]:active {
+  transition: 0.3s all;
+  transform: translateY(3px);
+  border: 1px solid transparent;
+  opacity: 0.8;
+}
+
+input:disabled {
+  opacity: 0.4;
+}
+
+input[type="button"]:hover {
+  transition: 0.3s all;
+}
+
+button[type="button"] {
+  display: block;
+  appearance: none;
+  background: #0e98cf;
+  color: rgb(46, 43, 43);
+  border: none;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 4px;
 }

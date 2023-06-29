@@ -5,7 +5,8 @@ import Col from 'react-bootstrap/Col';
 import "./App.css";
 import Container from 'react-bootstrap/Container';
 import Home from "./components/Home";
-import Properties from './components/Properties'
+import Properties from './components/Properties';
+import News from './components/News';
 import AddProperty from "./components/AddProperty";
 import PropertyDisplay from "./components/PropertyDisplay";
 import ListProperties from "./components/ListProperties";
@@ -57,7 +58,8 @@ function App() {
           <NavigationBar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="contact" element={<Contact properties={properties} />}></Route>
+            <Route path="news" element={<News properties={properties} />}></Route>
+            <Route path="contact" element={<Contact />}></Route>
             <Route path="/properties/" element={<Properties />}>
               <Route path="list" element={<ListProperties properties={properties} onUpdate={handleCurrentProperty} />} />
               <Route path="add" element={<AddProperty onhandleAddProperty={handleAddProperty} setProperties={setProperties} />} />
@@ -65,12 +67,8 @@ function App() {
               <Route path="*" element={<NoMatch />} />
             </Route>
           </Routes>
-
         </Col>
-
-
       </Row>
-
     </Container>
 
 

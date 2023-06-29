@@ -1,52 +1,180 @@
+import { useTable, useGlobalFilter, useSortBy, usePagination } from "react-table";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-import React, { useState } from "react";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import BarChart from "./BarChart";
-import ProfileCard from "./ProfileCard";
 
-function Contact({ properties }) {
-    const sortedProperties = [...properties]
-    const [userData, setUserData] = useState({
-        labels: sortedProperties.filter(data => data.state === 'Texas').sort((a, b) => a.city.localeCompare(b.city)).map(data => data.city),
-        datasets: [
+function Contact() {
+    const [data, setData] = useState([]);
+    const [searchQuery, setSearchQuery] = useState("");
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(
+                    "https://cities-qd9i.onrender.com/agents"
+                );
+                setData(response.data);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    const columns = React.useMemo(
+        () => [
             {
-                label: "Price Trend by City",
-                data: properties.map((data) => data.listing_price),
-                backgroundColor: [
-                    "rgba(75,192,192,1)",
-                    "#ecf0f1",
-                    "#50AF95",
-                    "#f3ba2f",
-                    "#2a71d0",
-                ],
-                borderColor: "black",
-                borderWidth: 1,
+                Header: "ID",
+                accessor: "id",
             },
-
+            {
+                Header: "First Name",
+                accessor: "first_name",
+            },
+            {
+                Header: "Last Name",
+                accessor: "last_name",
+            },
+            {
+                Header: "State",
+                accessor: "state",
+            },
+            {
+                Header: "Email",
+                accessor: "email",
+            },
+            {
+                Header: "City",
+                accessor: "city",
+            },
+            {
+                Header: "Phone",
+                accessor: "phone",
+            },
         ],
-    });
+        []
+    );
+
+    const {
+        getTableProps,
+        getTableBodyProps,
+        headerGroups,
+        page,
+        nextPage,
+        previousPage,
+        canNextPage,
+        canPreviousPage,
+        pageOptions,
+        state: { pageIndex, pageSize },
+        prepareRow,
+        setGlobalFilter,
+    } = useTable({ columns, data, initialState: { pageIndex: 0, pageSize: 20 } }, useGlobalFilter, useSortBy, usePagination);
+
+    const handleSearch = (e) => {
+        const value = e.target.value;
+        setSearchQuery(value);
+        setGlobalFilter(value);
+    };
 
     return (
-        <Container>
-            <Row>
-                <Col lg>
-                    <hr className="style1" />
-                    <h3 className="styleh3">Meet our Agents </h3>
-                    <hr className="style1" />
-                    <ProfileCard />
-                    <hr className="style1" />
-                    <h3 className="styleh3">Prices Trend by Cities in Texas State. </h3>
-                    <hr className="style1" />
-                    <BarChart chartData={userData} />
-                </Col>
-            </Row>
-        </Container>
+        <div className="roomcontact ">
 
+            <div className="roomcontact ">
+                <hr className="style1" />
+                <h3 className="styleh3">Prices Trend by Cities in Texas State. </h3>
+                <hr className="style1" />
 
+            </div>
+
+            <div>
+                <label htmlFor="search">Search: </label>
+                <input
+                className="searchText "
+                    id="search"
+                    type="text"
+                    value={searchQuery}
+                    onChange={handleSearch}
+                />
+            </div>
+            <table {...getTableProps()}>
+                <thead>
+                    {headerGroups.map((headerGroup) => (
+                        <tr {...headerGroup.getHeaderGroupProps()}>
+                            {headerGroup.headers.map((column) => (
+                                <th
+                                    {...column.getHeaderProps(column.getSortByToggleProps())}
+                                    className={
+                                        column.isSorted
+                                            ? column.isSortedDesc
+                                                ? "sorted-desc"
+                                                : "sorted-asc"
+                                            : ""
+                                    }
+                                >
+                                    {column.render("Header")}
+                                    {column.isSorted ? (
+                                        column.isSortedDesc ? (
+                                            <span>&darr;</span>
+                                        ) : (
+                                            <span>&uarr;</span>
+                                        )
+                                    ) : null}
+                                </th>
+                            ))}
+                        </tr>
+                    ))}
+                </thead>
+                <tbody {...getTableBodyProps()}>
+                    {page.map((row) => {
+                        prepareRow(row);
+                        return (
+                            <tr {...row.getRowProps()}>
+                                {row.cells.map((cell) => (
+                                    <td {...cell.getCellProps()}> {cell.render("Cell")} </td>
+                                ))}
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
+            <div className="pagination">
+                <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+                    Previous
+                </button>
+                <span>
+                    Page{" "}
+                    <strong>
+                        {pageIndex + 1} of {pageOptions.length}
+                    </strong>
+                </span>
+                <button onClick={() => nextPage()} disabled={!canNextPage}>
+                    Next
+                </button>
+            </div>
+        </div>
     );
 }
 
-
 export default Contact;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

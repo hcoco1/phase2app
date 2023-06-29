@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useParams } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
+import { Button } from 'semantic-ui-react'
 import Modal from 'react-bootstrap/Modal';
 import CardModal from './CardModal';
 
@@ -14,12 +14,12 @@ function ViewBtn({ properties }) {
 
   return (
     <>
-      <Button className='btn-view' size="sm" variant="primary" onClick={handleShow}>
-        View more images
+      <Button positive compact onClick={handleShow}>
+        Images
       </Button>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+        <Modal.Header>
           <Modal.Title>
              <strong>{properties[id - 1]?.property_type}</strong> For {properties[id - 1]?.operation_type}  ${properties[id - 1]?.listing_price}
           </Modal.Title>
@@ -30,7 +30,7 @@ function ViewBtn({ properties }) {
           <CardModal properties={properties} />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button  onClick={handleClose}>
             Close
           </Button>
 

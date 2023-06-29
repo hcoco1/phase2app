@@ -1,6 +1,8 @@
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import { Button } from 'semantic-ui-react'
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { FcSearch } from "react-icons/fc";
 
 
 function Cards({ onUpdate, property, address, city, state, zip_code, listing_price, bedrooms, bathrooms, square_feet, listing_date, image, property_type, operation_type, likes, Property_details, amenities }) {
@@ -19,14 +21,13 @@ function Cards({ onUpdate, property, address, city, state, zip_code, listing_pri
                 <Card.Text>
                     {address},{city},  {state} {zip_code}
                 </Card.Text>
-                <Button className='btnViewPro' variant="info" onClick={() => {
+                <Button compact color='olive' onClick={() => {
                     onUpdate(property)
                     navigate(`/properties/${property.id}`);
-                }} >View Property</Button>{' '}
-                 
-                
+                }} >View</Button>{' '}
+ 
             </Card.Body>
-            
+
         </Card>
     )
 }

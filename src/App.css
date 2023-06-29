@@ -133,7 +133,7 @@ a {
 
 .card {
   margin: 20px;
-  background-color: aliceblue;
+  background-color: rgb(222, 249, 250) !important;
 }
 
 .me-0 {

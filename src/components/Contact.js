@@ -1,11 +1,11 @@
-import { useTable, useGlobalFilter, useSortBy, usePagination } from "react-table";
+import { useTable, useSortBy } from "react-table";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
 
 function Contact() {
     const [data, setData] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -14,6 +14,7 @@ function Contact() {
                     "https://cities-qd9i.onrender.com/agents"
                 );
                 setData(response.data);
+                setSearchResults(response.data);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
@@ -27,147 +28,115 @@ function Contact() {
             {
                 Header: "ID",
                 accessor: "id",
+                sortable: true,
             },
             {
                 Header: "First Name",
                 accessor: "first_name",
+                sortable: true,
             },
             {
                 Header: "Last Name",
                 accessor: "last_name",
+                sortable: true,
             },
             {
                 Header: "State",
                 accessor: "state",
+                sortable: true,
             },
             {
                 Header: "Email",
                 accessor: "email",
+                sortable: true,
             },
             {
                 Header: "City",
                 accessor: "city",
+                sortable: true,
             },
             {
                 Header: "Phone",
                 accessor: "phone",
+                sortable: true,
             },
         ],
         []
     );
 
+    const handleSearch = (e) => {
+        const value = e.target.value;
+        setSearchQuery(value);
+        const filteredData = data.filter((row) => {
+            return (
+                row.id?.toString().toLowerCase().includes(value.toLowerCase()) ||
+                row.first_name?.toLowerCase().includes(value.toLowerCase()) ||
+                row.last_name?.toLowerCase().includes(value.toLowerCase()) ||
+                row.state?.toLowerCase().includes(value.toLowerCase()) ||
+                row.email?.toLowerCase().includes(value.toLowerCase()) ||
+                row.city?.toLowerCase().includes(value.toLowerCase()) ||
+                row.phone?.toLowerCase().includes(value.toLowerCase())
+            );
+        });
+        setSearchResults(filteredData);
+    };
+
     const {
         getTableProps,
         getTableBodyProps,
         headerGroups,
-        page,
-        nextPage,
-        previousPage,
-        canNextPage,
-        canPreviousPage,
-        pageOptions,
-        state: { pageIndex, pageSize },
+        rows,
         prepareRow,
-        setGlobalFilter,
-    } = useTable({ columns, data, initialState: { pageIndex: 0, pageSize: 20 } }, useGlobalFilter, useSortBy, usePagination);
-
-    const handleSearch = (e) => {
-        const value = e.target.value;
-        setSearchQuery(value);
-        setGlobalFilter(value);
-    };
+    } = useTable({ columns, data: searchResults }, useSortBy);
 
     return (
-        <div className="roomcontact ">
-
-            <div className="roomcontact ">
-                <hr className="style1" />
-                <h3 className="styleh3">Prices Trend by Cities in Texas State. </h3>
-                <hr className="style1" />
-
-            </div>
-
-            <div>
-                <label htmlFor="search">Search: </label>
-                <input
-                className="searchText "
-                    id="search"
-                    type="text"
-                    value={searchQuery}
-                    onChange={handleSearch}
-                />
-            </div>
+        <div className="container" style={{ maxHeight: "1000px", overflowY: "auto" }}>
+            <hr className="style1" />
+            <h2 className="filterFormh2"> <strong>Let's find an agent for you!</strong></h2>
+            <hr className="style1" />
+            <input
+                type="text"
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={handleSearch}
+            />
             <table {...getTableProps()}>
                 <thead>
                     {headerGroups.map((headerGroup) => (
                         <tr {...headerGroup.getHeaderGroupProps()}>
                             {headerGroup.headers.map((column) => (
-                                <th
-                                    {...column.getHeaderProps(column.getSortByToggleProps())}
-                                    className={
-                                        column.isSorted
-                                            ? column.isSortedDesc
-                                                ? "sorted-desc"
-                                                : "sorted-asc"
-                                            : ""
-                                    }
-                                >
+                                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                                     {column.render("Header")}
-                                    {column.isSorted ? (
-                                        column.isSortedDesc ? (
-                                            <span>&darr;</span>
-                                        ) : (
-                                            <span>&uarr;</span>
-                                        )
-                                    ) : null}
+                                    <span>
+                                        {column.isSorted
+                                            ? column.isSortedDesc
+                                                ? " 🔽"
+                                                : " 🔼"
+                                            : ""}
+                                    </span>
                                 </th>
                             ))}
                         </tr>
                     ))}
                 </thead>
                 <tbody {...getTableBodyProps()}>
-                    {page.map((row) => {
+                    {rows.map((row) => {
                         prepareRow(row);
                         return (
                             <tr {...row.getRowProps()}>
                                 {row.cells.map((cell) => (
-                                    <td {...cell.getCellProps()}> {cell.render("Cell")} </td>
+                                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
                                 ))}
                             </tr>
                         );
                     })}
                 </tbody>
             </table>
-            <div className="pagination">
-                <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-                    Previous
-                </button>
-                <span>
-                    Page{" "}
-                    <strong>
-                        {pageIndex + 1} of {pageOptions.length}
-                    </strong>
-                </span>
-                <button onClick={() => nextPage()} disabled={!canNextPage}>
-                    Next
-                </button>
-            </div>
         </div>
     );
 }
 
 export default Contact;
-
-
-
-
-
-
-
-
-
-
-
 
 
 

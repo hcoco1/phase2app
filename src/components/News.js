@@ -1,10 +1,9 @@
-
 import React, { useState } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import BarChart from "./BarChart";
-import ProfileCard from "./Table";
+
 
 function News({ properties }) {
     const sortedProperties = [...properties]

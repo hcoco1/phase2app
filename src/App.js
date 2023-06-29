@@ -59,7 +59,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="news" element={<News properties={properties} />}></Route>
-            <Route path="contact" element={<Contact />}></Route>
+            <Route path="contact" element={<Contact properties={properties} />}></Route>
             <Route path="/properties/" element={<Properties />}>
               <Route path="list" element={<ListProperties properties={properties} onUpdate={handleCurrentProperty} />} />
               <Route path="add" element={<AddProperty onhandleAddProperty={handleAddProperty} setProperties={setProperties} />} />

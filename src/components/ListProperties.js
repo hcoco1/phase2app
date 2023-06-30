@@ -53,11 +53,11 @@ function ListProperties({ properties, onUpdate }) {
         <Container>
             <Row>
                 <Col lg>
-                    <div className="roomfac">
+                    <div className="cardContainer">
                         <hr className="style1" />
                         <h6> <strong>Filter by:</strong></h6>
                         <Search filteredProperties={filteredProperties} resetForm={resetForm} handlePrice={handlePrice} price={price} handleType={handleType} type={type} handleOperation={handleOperation} operation={operation} />
-                        
+
                         <hr className="style1" />
                         {filteredProperties.map((property) => {
                             return (

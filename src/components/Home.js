@@ -21,7 +21,6 @@ function Home() {
             <FooterHome />
           </div>
         </Col>
-
       </Row>
     </Container>
 

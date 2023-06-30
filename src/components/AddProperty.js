@@ -25,6 +25,7 @@ export default function AddProperty({ onhandleAddProperty, property }) {
   }
   console.log(errors);
 
+
   return (
     <Container>
       <Row>

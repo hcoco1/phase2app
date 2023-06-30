@@ -16,8 +16,8 @@ function NavigationBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavLink id="RouterNavLink" className="linkNav" to="properties/list">Properties</NavLink>
-            <NavLink id="RouterNavLink" className="linkNav" to="/contact">Contact</NavLink>
-            <NavLink id="RouterNavLink" className="linkNav" to="news">News</NavLink>
+            <NavLink id="RouterNavLink" className="linkNav" to="/contact">Table</NavLink>
+            <NavLink id="RouterNavLink" className="linkNav" to="news">Charts</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

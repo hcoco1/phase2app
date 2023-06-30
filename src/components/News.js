@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import BarChart from "./BarChart";
-import LineChart  from "./LineChart";
+import LineChart from "./LineChart";
 
 
 function News({ properties }) {
@@ -39,7 +39,6 @@ function News({ properties }) {
                     <hr className="style1" />
                     <h3 className="styleh3">Prices Trend by Cities in Texas State. </h3>
                     <hr className="style1" />
-                  
                     <LineChart chartData={userData} />
                 </Col>
             </Row>

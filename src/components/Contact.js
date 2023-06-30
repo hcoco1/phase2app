@@ -4,17 +4,15 @@ import React, { useState, useEffect } from "react";
 
 
 function Contact({ properties }) {
-    const [data, setData] = useState([]);
-    const [searchQuery, setSearchQuery] = useState("");
-    const [searchResults, setSearchResults] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-  console.log(properties)
+  const [data, setData] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+   console.log(properties)
 
   useEffect(() => {
     setData(properties);
     setSearchResults(properties);
-    setIsLoading(false);
-  }, [properties]);
+     }, [properties]);
 
   const columns = React.useMemo(
     () => [
@@ -81,7 +79,7 @@ function Contact({ properties }) {
     rows,
     prepareRow,
   } = useTable({ columns, data: searchResults }, useSortBy, useSticky);
-  
+
 
   return (
     <div className="container" style={{ maxHeight: "1000px", overflowY: "auto" }}>
@@ -100,16 +98,15 @@ function Contact({ properties }) {
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()} className="sticky">
-  {headerGroup.headers.map((column) => (
-    <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-      {column.render("Header")}
-      <span>
-        {column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : ""}
-      </span>
-    </th>
-  ))}
-</tr>
-
+              {headerGroup.headers.map((column) => (
+                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  {column.render("Header")}
+                  <span>
+                    {column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : ""}
+                  </span>
+                </th>
+              ))}
+            </tr>
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>

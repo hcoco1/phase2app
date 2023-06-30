@@ -22,8 +22,6 @@ function App() {
   const [properties, setProperties] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
-
-
   useEffect(() => {
     fetch(`https://phase2-db.onrender.com/properties`)
       .then((response) => response.json())

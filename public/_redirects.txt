@@ -1,7 +1,10 @@
 /* /index.html 200
 /* /home 200
-/* /products 200
-/* /products/list 200
-/* /products/add 200
+/* /news 200
+/* /contact 200
+/* /properties 200
+/* /properties/list 200
+/* /properties/add 200
+/* /properties/:id 200
 
 

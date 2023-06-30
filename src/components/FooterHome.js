@@ -6,7 +6,7 @@ import {
   MDBBtn
 } from 'mdb-react-ui-kit';
 
-export default function App() {
+export default function FooterHome() {
   return (
     <MDBFooter className='text-center text-white' style={{ backgroundColor: '#f1f1f1' }}>
       <MDBContainer className='pt-4'>
@@ -80,7 +80,7 @@ export default function App() {
             href='#!'
             role='button'
           >
-            <MDBIcon fab className='fa-github' />
+            
           </MDBBtn>
         </section>
       </MDBContainer>

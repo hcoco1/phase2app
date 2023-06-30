@@ -1,3 +1,7 @@
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import React from 'react';
 import {
   MDBFooter,
@@ -8,6 +12,10 @@ import {
 
 export default function FooterHome() {
   return (
+    <Container>
+    <Row>
+      <Col lg>
+
     <MDBFooter className='text-center text-white' style={{ backgroundColor: '#f1f1f1' }}>
       <MDBContainer className='pt-4'>
         <section className='mb-4'>
@@ -80,7 +88,7 @@ export default function FooterHome() {
             href='#!'
             role='button'
           >
-            
+
           </MDBBtn>
         </section>
       </MDBContainer>
@@ -91,6 +99,10 @@ export default function FooterHome() {
 
         </a>
       </div>
-    </MDBFooter>
+      </MDBFooter>
+      </Col>
+      </Row>
+    </Container>
+    
   );
 }

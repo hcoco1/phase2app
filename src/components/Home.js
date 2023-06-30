@@ -8,18 +8,26 @@ import SegmentHome from "./SegmentHome";
 
 
 function Home() {
+  const mystyle = {
+
+    textAlign:'center',
+  };
   return (
     <Container>
       <Row>
         <Col lg>
           <div className="home">
             <hr className="style1" />
-            <h2 className='filterFormh2'>Let’s find a home that’s perfect for you</h2>
+            <h3 style={mystyle}>Let’s find a home for you</h3>
             <hr className="style1" />
             <CarouselHome />
             <SegmentHome/>
-            <FooterHome />
+          <FooterHome />
+            
           </div>
+            
+            
+            
         </Col>
       </Row>
     </Container>

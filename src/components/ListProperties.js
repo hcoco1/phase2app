@@ -53,8 +53,9 @@ function ListProperties({ properties, onUpdate }) {
         <Container>
             <Row>
                 <Col lg>
+                    <hr className="style1" />
                     <div className="cardContainer">
-                        <hr className="style1" />
+
                         <h6> <strong>Filter by:</strong></h6>
                         <Search filteredProperties={filteredProperties} resetForm={resetForm} handlePrice={handlePrice} price={price} handleType={handleType} type={type} handleOperation={handleOperation} operation={operation} />
 

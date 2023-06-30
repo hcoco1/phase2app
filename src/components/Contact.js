@@ -1,18 +1,22 @@
 import { useTable, useSortBy } from "react-table";
 import { useSticky } from "react-table-sticky";
 import React, { useState, useEffect } from "react";
+import FooterHome from "./FooterHome";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 function Contact({ properties }) {
   const [data, setData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-   console.log(properties)
+  console.log(properties)
 
   useEffect(() => {
     setData(properties);
     setSearchResults(properties);
-     }, [properties]);
+  }, [properties]);
 
   const columns = React.useMemo(
     () => [
@@ -82,50 +86,60 @@ function Contact({ properties }) {
 
 
   return (
-    <div className="container" style={{ maxHeight: "1000px", overflowY: "auto" }}>
-      <hr className="style1" />
-      <h2 className="filterFormh2">
-        <strong>Search by typing something or Sort by clicking on the headings:</strong>
-      </h2>
-      <hr className="style1" />
-      <input
-        type="text"
-        placeholder="Search by typing something..."
-        value={searchQuery}
-        onChange={handleSearch}
-      />
-      <table {...getTableProps()} className="striped-table">
-        <thead>
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()} className="sticky">
-              {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                  {column.render("Header")}
-                  <span>
-                    {column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : ""}
-                  </span>
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {rows.map((row, index) => {
-            prepareRow(row);
-            return (
-              <tr
-                {...row.getRowProps()}
-                className={index % 2 === 0 ? "even-row" : "odd-row"}
-              >
-                {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+    <Container>
+    <Row>
+      <Col lg>
+      <div className="container" style={{ maxHeight: "1000px", overflowY: "auto" }}>
+        <hr className="style1" />
+        <h2 className="filterFormh2">
+          <strong>Search by typing something or Sort by clicking on the headings:</strong>
+        </h2>
+        <hr className="style1" />
+        <input
+          type="text"
+          placeholder="Search by typing something..."
+          value={searchQuery}
+          onChange={handleSearch}
+        />
+        <table {...getTableProps()} className="striped-table">
+          <thead>
+            {headerGroups.map((headerGroup) => (
+              <tr {...headerGroup.getHeaderGroupProps()} className="sticky">
+                {headerGroup.headers.map((column) => (
+                  <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                    {column.render("Header")}
+                    <span>
+                      {column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : ""}
+                    </span>
+                  </th>
                 ))}
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+            ))}
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {rows.map((row, index) => {
+              prepareRow(row);
+              return (
+                <tr
+                  {...row.getRowProps()}
+                  className={index % 2 === 0 ? "even-row" : "odd-row"}
+                >
+                  {row.cells.map((cell) => (
+                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                  ))}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+
+      </div>
+      <FooterHome />
+      </Col>
+      </Row>
+    </Container>
+
+
   );
 }
 

@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import BarChart from "./BarChart";
 import LineChart from "./LineChart";
+import FooterHome from "./FooterHome";
 
 
 function News({ properties }) {
@@ -13,7 +14,7 @@ function News({ properties }) {
         datasets: [
             {
                 label: "Price Trend by City",
-                data: properties.map((data) => data.listing_price),
+                data: sortedProperties.map((data) => data.listing_price),
                 backgroundColor: [
                     "rgba(75,192,192,1)",
                     "#ecf0f1",
@@ -40,6 +41,7 @@ function News({ properties }) {
                     <h3 className="styleh3">Prices Trend by Cities in Texas State. </h3>
                     <hr className="style1" />
                     <LineChart chartData={userData} />
+                    <FooterHome />
                 </Col>
             </Row>
         </Container>

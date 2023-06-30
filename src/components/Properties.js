@@ -12,7 +12,9 @@ function Properties() {
     <Container>
     <Row>
       <Col lg>
+      <hr className="style1" />
       <div className="productsNav container" >
+        
         <Link className="linkproperties" to="/properties/list"><FcSearch /> List </Link>
         <Link className="linkproperties" to="/properties/add"> <FcDepartment /> New Property </Link>
       </div>

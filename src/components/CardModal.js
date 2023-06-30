@@ -1,9 +1,14 @@
 import Card from 'react-bootstrap/Card';
 import Carousel from 'react-bootstrap/Carousel';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function CardModal() {
   return (
-    <>
+    <Container>
+    <Row>
+      <Col lg>
       <Card>
         <Carousel className='viewBtn'>
           <Carousel.Item>
@@ -36,7 +41,9 @@ function CardModal() {
         </Carousel>
       </Card>
       <br />
-    </>
+      </Col>
+      </Row>
+    </Container>
   );
 }
 export default CardModal;

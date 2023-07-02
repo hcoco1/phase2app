@@ -8,11 +8,10 @@ import FooterHome from './FooterHome';
 import DropdownFilter from './DropdownFilter';
 
 function ListProperties({ properties, onUpdate }) {
-
+    //useState DropdownFilter component
     const [price, setPrice] = useState('All');
     const [type, setType] = useState('All');
     const [operation, setOperation] = useState('All');
-
     //Reset filter to all values using state
     const resetForm = () => {
         setPrice('All')
@@ -35,21 +34,13 @@ function ListProperties({ properties, onUpdate }) {
         setOperation(e)
     }
 
-
-
     // Filter the data based on selected options
     const filteredProperties = properties.filter((property) => {
-        const priceCondition =
-            price === 'All' || (price === '300000' && property.listing_price < 300000) || (price === '450000' && property.listing_price > 450000) || (price === '600000' && property.listing_price > 600000);
+        const priceCondition = price === 'All' || (price === '300000' && property.listing_price < 300000) || (price === '450000' && property.listing_price > 450000) || (price === '600000' && property.listing_price > 600000);
         const typeCondition = type === 'All' || property.property_type === type;
         const operationCondition = operation === 'All' || property.operation_type === operation;
-
         return priceCondition && typeCondition && operationCondition;
     });
-
-
-    //console.log("ListProperties filteredProperties:", filteredProperties)
-
     return (
         <Container>
             <Row>
@@ -57,14 +48,40 @@ function ListProperties({ properties, onUpdate }) {
                     <hr className="stylehr" />
                     <div className="cardContainer">
                         <h6> <strong>Filter by:</strong></h6>
-                        <DropdownFilter filteredProperties={filteredProperties} resetForm={resetForm} handlePrice={handlePrice} price={price} handleType={handleType} type={type} handleOperation={handleOperation} operation={operation} />
+                        <DropdownFilter
+                            filteredProperties={filteredProperties}
+                            resetForm={resetForm}
+                            handlePrice={handlePrice}
+                            price={price}
+                            handleType={handleType}
+                            type={type}
+                            handleOperation={handleOperation}
+                            operation={operation}
+                        />
                         <hr className="stylehr" />
                         {filteredProperties.map((property) => {
                             return (
                                 <div
                                     key={property.id}
                                 >
-                                    <PropertyCards key={property.id} onUpdate={onUpdate} id={property.id} property={property} address={property.address} city={property.city} state={property.state} zip_code={property.zip_code} listing_price={property.listing_price} bedrooms={property.bedrooms} bathrooms={property.bathrooms} square_feet={property.square_feet} listing_date={property.listing_date} image={property.image} property_type={property.property_type} operation_type={property.operation_type} />{" "}
+                                    <PropertyCards
+                                        key={property.id}
+                                        onUpdate={onUpdate}//handleCurrentProperty(App)
+                                        id={property.id}
+                                        property={property}
+                                        address={property.address}
+                                        city={property.city}
+                                        state={property.state}
+                                        zip_code={property.zip_code}
+                                        listing_price={property.listing_price}
+                                        bedrooms={property.bedrooms}
+                                        bathrooms={property.bathrooms}
+                                        square_feet={property.square_feet}
+                                        listing_date={property.listing_date}
+                                        image={property.image}
+                                        property_type={property.property_type}
+                                        operation_type={property.operation_type}
+                                    />{" "}
                                 </div>
                             );
                         })}

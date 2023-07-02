@@ -4,7 +4,21 @@ import { useNavigate } from "react-router-dom";
 
 
 
-function Cards({ onUpdate, property, address, city, state, zip_code, listing_price, bedrooms, bathrooms, square_feet, listing_date, image, property_type, operation_type, likes, Property_details, amenities }) {
+function PropertyCards({
+    onUpdate,
+    property,
+    address,
+    city,
+    state,
+    zip_code,
+    listing_price,
+    bedrooms,
+    bathrooms,
+    square_feet,
+    image,
+    property_type,
+    operation_type
+}) {
     const navigate = useNavigate();
     return (
         <Card style={{ width: '25rem' }}>
@@ -24,13 +38,11 @@ function Cards({ onUpdate, property, address, city, state, zip_code, listing_pri
                     onUpdate(property)
                     navigate(`/properties/${property.id}`);
                 }} >View</Button>{' '}
- 
             </Card.Body>
-
         </Card>
     )
 }
-export default Cards;
+export default PropertyCards;
 
 
 

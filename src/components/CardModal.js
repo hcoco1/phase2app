@@ -4,10 +4,18 @@ import Carousel from 'react-bootstrap/Carousel';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { useParams } from "react-router-dom";
 
-function CardModal() {
+function CardModal({ properties }) {
+  const mystyle = {
+    color: "white",
+    padding: "5px",
+    fontFamily: "Arial",
+    textAlign: 'center',
+  };
+  const { id } = useParams();
   return (
-        <Container>
+    <Container>
       <Row>
         <Col lg>
           <Card>
@@ -19,7 +27,14 @@ function CardModal() {
                   alt="First slide"
                 />
                 <Carousel.Caption>
+                  <h4
+                    style={mystyle}>
+                    <strong>{properties[id - 1]?.property_type}</strong>
+                    For {properties[id - 1]?.operation_type}
+                    ${properties[id - 1]?.listing_price}
+                  </h4>
                 </Carousel.Caption>
+
               </Carousel.Item>
               <Carousel.Item>
                 <img

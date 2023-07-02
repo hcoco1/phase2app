@@ -1,10 +1,21 @@
-# Ivan Arias. Full-Stack Engineering Student.
+<div align="center"><h1>Ivan Arias. Full-Stack Engineering Student.</h1></div>
 
-## Phase 2 Project: Real State Site
+<div id="badges" align="center">
+  <a href="https://www.linkedin.com/in/arias-ivan-hcoco1/">
+    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
+  </a>
+  <a href="https://www.youtube.com/channel/UCban0ilP3jBC9rdmL-fPy_Q">
+    <img src="https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube&logoColor=white" alt="Youtube Badge"/>
+  </a>
+  <a href="https://twitter.com/hcoco1">
+    <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
+  </a>
+</div>  
 
+
+## Phase 2 Project: Real State Site.
 ### Deployment link: https://phase2app.vercel.app/
 ##### Phase 2 Project repository link: https://github.com/hcoco1/phase2app
-
 ### Database link:  https://phase2-db.onrender.com/
 ##### Database repository link: https://github.com/hcoco1/phase2-dB
 
@@ -98,3 +109,4 @@ Additionally, RES uses three RESTful routing conventions:
  2. Responsive design.
 
  3. Update the state of the modal components.
+ 

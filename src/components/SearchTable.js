@@ -12,11 +12,17 @@ function SearchTable({ properties }) {
   const [data, setData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  console.log(properties)
+  const [error, setError] = useState(null);
+  //console.log(properties)
 
   useEffect(() => {
-    setData(properties);
-    setSearchResults(properties);
+    try {
+      setData(properties);
+      setSearchResults(properties);
+      setError(null);
+    } catch (error) {
+      setError("Error occurred while setting data");
+    }
   }, [properties]);
 
   const columns = React.useMemo(

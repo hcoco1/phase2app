@@ -6,7 +6,7 @@ import { FcSearch } from "react-icons/fc";
 import { Button } from 'semantic-ui-react'
 import Card from 'react-bootstrap/Card';
 import ViewBtn from './ViewBtn';
-import FooterHome from "./FooterHome";
+import Footer from "./Footer";
 
 
 
@@ -50,7 +50,7 @@ function PropertyDisplay({ properties, onhandleDeletedProperty, property }) {
                     </Card.Body>
                 </Card>
             </div>
-            <FooterHome />
+            <Footer />
         </>
 
 

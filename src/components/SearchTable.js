@@ -2,7 +2,7 @@
 import { useTable, useSortBy } from "react-table";
 import { useSticky } from "react-table-sticky";
 import React, { useState, useEffect } from "react";
-import FooterHome from "./FooterHome";
+import Footer from "./Footer";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -141,7 +141,7 @@ function SearchTable({ properties }) {
         </table>
 
       </div>
-      <FooterHome />
+      <Footer />
       </Col>
       </Row>
     </Container>

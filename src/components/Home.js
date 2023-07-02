@@ -1,7 +1,7 @@
 
 import React from "react";
 import CarouselHome from "./CarouselHome";
-import FooterHome from "./FooterHome";
+import Footer from "./Footer";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -20,7 +20,7 @@ function Home() {
             <hr className="stylehr" />
             <CarouselHome />
             <SegmentHome />
-            <FooterHome />
+            <Footer />
           </div>
         </Col>
       </Row>

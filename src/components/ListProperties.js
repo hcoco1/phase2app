@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import PropertyCards from "./PropertyCards";
-import FooterHome from './FooterHome';
+import Footer from './Footer';
 import DropdownFilter from './DropdownFilter';
 
 function ListProperties({ properties, onUpdate }) {
@@ -88,7 +88,7 @@ function ListProperties({ properties, onUpdate }) {
 
                     </div>
                     <>
-                        <FooterHome />
+                        <Footer />
                     </>
                 </Col>
             </Row>

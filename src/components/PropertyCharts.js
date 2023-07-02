@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import BarChart from "./BarChart";
 import LineChart from "./LineChart";
-import FooterHome from "./FooterHome";
+import Footer from "./Footer";
 
 
 function PropertyCharts({ properties }) {
@@ -43,7 +43,7 @@ function PropertyCharts({ properties }) {
                     <h3 className="styleh3">Prices Trend by Cities in Texas State. </h3>
                     <hr className="stylehr" />
                     <LineChart chartData={userData} />
-                    <FooterHome />
+                    <Footer />
                 </Col>
             </Row>
         </Container>

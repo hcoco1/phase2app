@@ -117,7 +117,53 @@ Additionally, RES uses three RESTful routing conventions:
 | PropertyDisplay | properties/:id  | DELETE    | Delete a specific property |
 
 ---
+### Backend Setup
+
 **Real Estate Site (RES)**  makes GET, POST, and DELETE requests to the " properties " web database. The POST request is managed for a controlled form using a "react-hook-form" hook.
+
+Database Structure
+
+
+
+```markdown
+{
+  "properties": [
+    {
+      "id": 1,
+      "address": "8 Hermina Center",
+      "city": "San Jose",
+      "state": "California",
+      "zip_code": "95138",
+      "listing_price": 278185,
+      "bedrooms": 8,
+      "bathrooms": 2,
+      "square_feet": 6427,
+      "listing_date": "6/22/2021",
+      "property_type": "Farm",
+      "operation_type": "Sale",
+      "image": "https://images.unsplash.com/photo-rce=unsplash_source&w=640"
+    },
+    {
+      "id": 2,
+      "address": "418 Mitchell Trail",
+      "city": "Newport News",
+      "state": "Virginia",
+      "zip_code": "23612",
+      "listing_price": 496205,
+      "bedrooms": 8,
+      "bathrooms": 1,
+      "square_feet": 1553,
+      "listing_date": "1/9/2020",
+      "property_type": "Farm",
+      "operation_type": "Rent",
+      "image": "https://images.unsplash.com/photo-159h_source&w=640"
+    }
+  ]
+}
+```
+
+
+
 
  Some of the dependencies of **Real Estate Site** are:
 
@@ -148,5 +194,4 @@ Additionally, RES uses three RESTful routing conventions:
  2. Responsive design.
 
  3. Update the state of the modal components.
- 
  

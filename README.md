@@ -28,3 +28,83 @@ Additionally, the user can view details about a property by clicking the View bu
 
 
 
+![how this app works](https://github.com/hcoco1/phase2app/blob/main/gif_phase_2.gif?raw=true) 
+
+
+---
+
+![how this app works](https://github.com/hcoco1/phase2app/blob/main/gif_phase_2.gif?raw=true) 
+ 
+---
+Project Structure
+
+**Real Estate Site** runs on a single page and contains single HTML, CSS, and JS files.
+
+
+
+**Real Estate Site** has the following dependencies:
+
+1. "bootstrap": "^5.3.0",
+
+2. "chart.js": "^4.3.0",
+
+3. "mdb-react-ui-kit": "^6.1.0",
+
+4. "mdb-ui-kit": "^6.4.0",
+
+5. "modern-normalize": "^2.0.0",
+
+6. "react-bootstrap": "^2.7.4",
+
+7. "react-chartjs-2": "^5.2.0",
+
+8. "react-hook-form": "^7.45.0",
+
+9. "react-icons": "^4.9.0",
+
+10. "react-router-dom": "^6.13.0",
+
+11. "react-table": "^7.8.0",
+
+12. "react-table-plugins": "^1.3.4",
+
+13. "react-table-sticky": "^1.1.3",
+
+14. "semantic-ui-css": "^2.5.0",
+
+15. "semantic-ui-react": "^2.1.4".
+
+
+
+**Real Estate Site** App  has:
+
+1. Eighteen components
+
+2. Two for-loop statements. 
+
+3. Three .push() method.
+
+4. Three .forEach methods.
+
+5. One .sort() method.
+
+6. One GET method.
+
+7. One PATCH method.
+   
+8. One POST method.
+
+9. One DELETE methods.
+
+
+
+
+
+
+**Challenges**
+
+ 1. Write a clean code
+
+ 2. Deployment, Database: (https://world-population-dashboard.onrender.com), App : (https://hcoco1.github.io/Phase1_app/)
+ 
+ 3. Responsive design (Adding a mobile-style CSS file)

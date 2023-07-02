@@ -1,0 +1,23 @@
+# App
+## NavigationBar 
+## Home 
+### Carousel
+### Segment
+### Footer
+## Properties
+### ListProperties
+#### DropdownFilter
+#### PropertyCards
+#### Footer
+### AddProperty
+### PropertyDisplay
+#### ViewBtn
+##### CardModal
+#### Footer
+## SearchTable
+### Footer
+## PropertyCharts
+#### BarChart
+#### LineChart
+#### Footer
+

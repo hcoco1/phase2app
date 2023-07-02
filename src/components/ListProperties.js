@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import PropertyCards from "./PropertyCards";
 import FooterHome from './FooterHome';
-import Search from './Search';
+import DropdownFilter from './DropdownFilter';
 
 function ListProperties({ properties, onUpdate }) {
 
@@ -57,7 +57,7 @@ function ListProperties({ properties, onUpdate }) {
                     <hr className="stylehr" />
                     <div className="cardContainer">
                         <h6> <strong>Filter by:</strong></h6>
-                        <Search filteredProperties={filteredProperties} resetForm={resetForm} handlePrice={handlePrice} price={price} handleType={handleType} type={type} handleOperation={handleOperation} operation={operation} />
+                        <DropdownFilter filteredProperties={filteredProperties} resetForm={resetForm} handlePrice={handlePrice} price={price} handleType={handleType} type={type} handleOperation={handleOperation} operation={operation} />
                         <hr className="stylehr" />
                         {filteredProperties.map((property) => {
                             return (

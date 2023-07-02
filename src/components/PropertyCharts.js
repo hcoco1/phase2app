@@ -8,7 +8,7 @@ import LineChart from "./LineChart";
 import FooterHome from "./FooterHome";
 
 
-function News({ properties }) {
+function PropertyCharts({ properties }) {
     const sortedProperties = [...properties]
     const [userData, setUserData] = useState({
         
@@ -53,4 +53,4 @@ function News({ properties }) {
 }
 
 
-export default News;
+export default PropertyCharts;

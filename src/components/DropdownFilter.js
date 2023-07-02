@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
-function Search({ filteredProperties, resetForm, handlePrice, price, handleType, type, handleOperation, operation }) {
+function DropdownFilter({ filteredProperties, resetForm, handlePrice, price, handleType, type, handleOperation, operation }) {
 
 
   return (
@@ -72,4 +72,4 @@ function Search({ filteredProperties, resetForm, handlePrice, price, handleType,
   );
 }
 
-export default Search;
+export default DropdownFilter;

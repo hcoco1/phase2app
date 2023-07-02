@@ -7,11 +7,11 @@ import Container from 'react-bootstrap/Container';
 import Spinner from 'react-bootstrap/Spinner';
 import Home from './components/Home';
 import Properties from './components/Properties';
-import News from './components/News';
+import PropertyCharts from './components/PropertyCharts';
 import AddProperty from './components/AddProperty';
 import PropertyDisplay from './components/PropertyDisplay';
 import ListProperties from './components/ListProperties';
-import Contact from './components/Contact';
+import SearchTable from './components/SearchTable';
 import NavigationBar from './components/NavigationBar';
 import { NoMatch } from './components/NoMatch';
 
@@ -51,8 +51,8 @@ function App() {
           <NavigationBar />
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='news' element={<News properties={properties} />}></Route>
-            <Route path='contact' element={<Contact properties={properties} />}></Route>
+            <Route path='charts' element={<PropertyCharts properties={properties} />}></Route>
+            <Route path='search' element={<SearchTable properties={properties} />}></Route>
             <Route path='/properties/' element={<Properties />}>
               <Route path='list' element={<ListProperties properties={properties} onUpdate={handleCurrentProperty} />} />
               <Route path='add' element={<AddProperty onhandleAddProperty={handleAddProperty} setProperties={setProperties} property={currentProperty} />} />

@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
-export default function AddProperty({ onhandleAddProperty, property }) {
+export default function AddProperty({ onhandleAddProperty }) {
   const navigate = useNavigate();
   const { id } = useParams();
   const { register, handleSubmit, formState: { errors } } = useForm();

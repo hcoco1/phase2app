@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
-function Contact({ properties }) {
+function SearchTable({ properties }) {
   const [data, setData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -92,9 +92,9 @@ function Contact({ properties }) {
       <Col lg>
       <div className="container" style={{ maxHeight: "1000px", overflowY: "auto" }}>
         <hr className="stylehr" />
-        <h2 className="styleh2">
-          <strong>Search by typing something or Sort by clicking on the headings:</strong>
-        </h2>
+        <h3 className="styleh3">
+          Search or Sort by clicking on the headings:
+        </h3>
         <hr className="stylehr" />
         <input
           type="text"
@@ -144,7 +144,7 @@ function Contact({ properties }) {
   );
 }
 
-export default Contact;
+export default SearchTable;
 
 
 

@@ -2,9 +2,11 @@
 
 ## Phase 2 Project: Real State Site
 
-### Link: https://phase2app.vercel.app/
+### Deployment link: https://phase2app.vercel.app/
+##### Phase 2 Project repository link: https://github.com/hcoco1/phase2app
 
-### Database Link:  https://phase2-db.onrender.com/
+### Database link:  https://phase2-db.onrender.com/
+##### Database repository link: https://github.com/hcoco1/phase2-dB
 
 #### Project Pitch
 
@@ -20,91 +22,79 @@ Additionally, the user can view details about a property by clicking the View bu
 
 1.- Once the page load, the home page shows a few images and some information about real estate.
 
-2.-All the data is fetched in the properties tab. The user can scroll down and check the collection of properties. There are two nested tabs in  Properties: List and Add New Property. The List tab is, by default, where all data is displayed. By clicking the view button on a property card, users will be sent to a new view where only the selected property is shown. Also, the users can access more images, and a delete button is in the detail view. The user will be sent to the List tab by clicking on the List button. The Add New Property tab is where the user adds new real estate properties in the database.
+2.-All the data is fetched in the properties tab. The user can scroll down and check the collection of properties. There are two nested tabs in  Properties: List and Add New Property. The List tab is, by default, where all data is displayed. By clicking the view button on a property card, users will be sent to a new view where only the selected property is shown. Also, the users can access more images, and a delete button is in the detail view. The user will be sent to the List tab by clicking the List button. The Add New Property tab is where the user adds new real estate properties in the database.
 
 3.- A table is showing in the Table tab. It contains information on seven attributes (id,  city, state, listing price,  square feet,  property type, and operation type). Users can sort the attributes by clicking on the table header. Additionally, users can search for a specific detail by typing in the search text box input located about the table.
 
 4.- Two statistics charts are shown in the Charts tab. A bar chart and a line chart show information about how properties prices in Texas state. If the user hovers over the graph, some information will be displayed.
 
 
-
-![how this app works](https://github.com/hcoco1/phase2app/blob/main/gif_phase_2.gif?raw=true) 
-
-
 ---
 
 ![how this app works](https://github.com/hcoco1/phase2app/blob/main/gif_phase_2.gif?raw=true) 
  
 ---
-Project Structure
+### **Project Structure**
 
-**Real Estate Site** runs on a single page and contains single HTML, CSS, and JS files.
-
-
-
-**Real Estate Site** has the following dependencies:
-
-1. "bootstrap": "^5.3.0",
-
-2. "chart.js": "^4.3.0",
-
-3. "mdb-react-ui-kit": "^6.1.0",
-
-4. "mdb-ui-kit": "^6.4.0",
-
-5. "modern-normalize": "^2.0.0",
-
-6. "react-bootstrap": "^2.7.4",
-
-7. "react-chartjs-2": "^5.2.0",
-
-8. "react-hook-form": "^7.45.0",
-
-9. "react-icons": "^4.9.0",
-
-10. "react-router-dom": "^6.13.0",
-
-11. "react-table": "^7.8.0",
-
-12. "react-table-plugins": "^1.3.4",
-
-13. "react-table-sticky": "^1.1.3",
-
-14. "semantic-ui-css": "^2.5.0",
-
-15. "semantic-ui-react": "^2.1.4".
-
-
-
-**Real Estate Site** App  has:
-
-1. Eighteen components
-
-2. Two for-loop statements. 
-
-3. Three .push() method.
-
-4. Three .forEach methods.
-
-5. One .sort() method.
-
-6. One GET method.
-
-7. One PATCH method.
-   
-8. One POST method.
-
-9. One DELETE methods.
-
-
-
-
-
-
-**Challenges**
-
- 1. Write a clean code
-
- 2. Deployment, Database: (https://world-population-dashboard.onrender.com), App : (https://hcoco1.github.io/Phase1_app/)
+ Real Estate Site runs on a single page and has Eighteen  JSX components.
+ ![how this App works](https://github.com/hcoco1/phase2app/blob/main/phase2_components.png?raw=true) 
  
- 3. Responsive design (Adding a mobile-style CSS file)
+ 
+ 
+ 
+ Also, RES uses seven client-side routes (four nested). Users can navigate between routes using the navigation bar and the nested menu.
+ 
+
+```javascript
+<Routes>
+  <Route path='/' element={<Home />} />
+  <Route path='charts' element={<PropertyCharts/>}></Route>
+  <Route path='search' element={<SearchTable />}></Route>
+  <Route path='/properties/' element={<Properties />}>
+    <Route path='list' element={<ListProperties />} />
+    <Route path='add' element={<AddProperty />} />
+    <Route path=':id' element={<PropertyDisplay />} />
+    <Route path='*' element={<NoMatch />} />
+  </Route>
+</Routes>
+```
+Additionally, RES uses three RESTful routing conventions:
+
+| Route   Name    | URL             | HTTP Verb | Description                |
+|-----------------|-----------------|-----------|----------------------------|
+| ListProperties  | properties/list | GET       | Display all properties     |
+| AddProperty     | properties/add  | POST      | Add new property to db     |
+| PropertyDisplay | properties/:id  | DELETE    | Delete a specific property |
+
+---
+**Real Estate Site (RES)**  makes GET, POST, and DELETE requests to the " properties " web database. The POST request is managed for a controlled form using a "react-hook-form" hook.
+
+ Some of the dependencies of **Real Estate Site** are:
+
+| #  	| Dependencies                               	|
+|----	|--------------------------------------------	|
+| 1  	|           "bootstrap": "^5.3.0",           	|
+| 2  	|           "chart.js": "^4.3.0",            	|
+| 3  	|           "mdb-react-ui-kit": "^6.1.0",    	|
+| 4  	|           "mdb-ui-kit": "^6.4.0",          	|
+| 5  	|           "modern-normalize": "^2.0.0",    	|
+| 6  	|           "react-bootstrap": "^2.7.4",     	|
+| 7  	|           "react-chartjs-2": "^5.2.0",     	|
+| 8  	|           "react-dom": "^18.2.0",          	|
+| 9  	|           "react-hook-form": "^7.45.0",    	|
+| 10 	|           "react-icons": "^4.9.0",         	|
+| 11 	|           "react-router-dom": "^6.13.0",   	|
+| 12 	|           "react-table": "^7.8.0",         	|
+| 13 	|           "react-table-plugins": "^1.3.4", 	|
+| 14 	|           "react-table-sticky": "^1.1.3",  	|
+| 15 	|           "semantic-ui-css": "^2.5.0",     	|
+| 16 	|           "semantic-ui-react": "^2.1.4",   	|
+
+
+##### **Challenges**
+
+ 1. Write a clean code / Use Folders to organize the components. 
+
+ 2. Responsive design.
+
+ 3. Update the state of the modal components.

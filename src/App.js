@@ -33,7 +33,7 @@ function App() {
     while the instance spins up.</h6>
 
   function handleAddProperty(property) {
-    setProperties([...properties, property]);
+    setProperties([...properties, property]); // Updating properties state.
   }
 
   function handleDeletedProperty() {
@@ -41,7 +41,7 @@ function App() {
     const updatedProperties = properties.filter((property) => property.id !== currentProperty.id);
     setProperties(updatedProperties);
   }
-  const handleCurrentProperty = (property) => {//=> check
+  const handleCurrentProperty = (property) => {
     setCurrentProperty({ ...property })
   }
   return (

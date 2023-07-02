@@ -13,7 +13,7 @@
 </div>  
 
 
-## Phase 2 Project: Real Estate Site.
+## Phase 2 Project: Real State Site.
 ### Deployment link: https://phase2app.vercel.app/
 ##### Phase 2 Project repository link: https://github.com/hcoco1/phase2app
 ### Database link:  https://phase2-db.onrender.com/
@@ -39,36 +39,75 @@ Additionally, the user can view details about a property by clicking the View bu
 
 4.- Two statistics charts are shown in the Charts tab. A bar chart and a line chart show information about how properties prices in Texas state. If the user hovers over the graph, some information will be displayed.
 
+<div align="center">
 
 ---
 
 ![how this app works](https://github.com/hcoco1/phase2app/blob/main/gif_phase_2.gif?raw=true) 
  
 ---
+
+
+</div>
+
+
 ### **Project Structure**
 
  Real Estate Site runs on a single page and has Eighteen  JSX components.
+ 
+
+ 
  ![how this App works](https://github.com/hcoco1/phase2app/blob/main/phase2_components.png?raw=true) 
  
- 
+
  
  
  Also, RES uses seven client-side routes (four nested). Users can navigate between routes using the navigation bar and the nested menu.
  
+Component App:
+
 
 ```javascript
-<Routes>
-  <Route path='/' element={<Home />} />
-  <Route path='charts' element={<PropertyCharts/>}></Route>
-  <Route path='search' element={<SearchTable />}></Route>
-  <Route path='/properties/' element={<Properties />}>
-    <Route path='list' element={<ListProperties />} />
-    <Route path='add' element={<AddProperty />} />
-    <Route path=':id' element={<PropertyDisplay />} />
-    <Route path='*' element={<NoMatch />} />
-  </Route>
-</Routes>
+<Container>
+  <Row>
+    <Col lg>
+      <NavigationBar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='charts' element={<PropertyCharts properties={properties} />}></Route>
+        <Route path='search' element={<SearchTable properties={properties} />}></Route>
+        <Route path='/properties/' element={<Properties />}>
+          <Route path='list' element={<ListProperties properties={properties} onUpdate={handleCurrentProperty} />} />
+          <Route path='add' element={<AddProperty onhandleAddProperty={handleAddProperty} setProperties={setProperties} property={currentProperty} />} />
+          <Route path=':id' element={<PropertyDisplay properties={properties} property={currentProperty} onhandleDeletedProperty={handleDeletedProperty} />} />
+          <Route path='*' element={<NoMatch />} />
+        </Route>
+      </Routes>
+    </Col>
+  </Row>
+</Container>
 ```
+Component NavigationBar:
+
+```javascript
+<Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" sticky="top" >
+  <Container>
+    <Navbar.Brand>
+      <Link className="linkNav" to="/">Home</Link>
+    </Navbar.Brand>
+    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+    <Navbar.Collapse id="responsive-navbar-nav">
+      <Nav className="me-auto">
+        <NavLink id="RouterNavLink" className="linkNav" to="properties/list">Properties</NavLink>
+        <NavLink id="RouterNavLink" className="linkNav" to="/search">Search</NavLink>
+        <NavLink id="RouterNavLink" className="linkNav" to="charts">Charts</NavLink>
+      </Nav>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
+```
+
+
 Additionally, RES uses three RESTful routing conventions:
 
 | Route   Name    | URL             | HTTP Verb | Description                |
@@ -109,4 +148,5 @@ Additionally, RES uses three RESTful routing conventions:
  2. Responsive design.
 
  3. Update the state of the modal components.
+ 
  

@@ -1,3 +1,4 @@
+
 import React from "react";
 import CarouselHome from "./CarouselHome";
 import FooterHome from "./FooterHome";
@@ -8,26 +9,19 @@ import SegmentHome from "./SegmentHome";
 
 
 function Home() {
-  const mystyle = {
 
-    textAlign:'center',
-  };
   return (
     <Container>
       <Row>
         <Col lg>
           <div className="home">
-            <hr className="style1" />
-            <h3 style={mystyle}>Let’s find a home for you</h3>
-            <hr className="style1" />
+            <hr className="stylehr" />
+            <h3 className="styleh3">Let’s find a home for you</h3>
+            <hr className="stylehr" />
             <CarouselHome />
-            <SegmentHome/>
-          <FooterHome />
-            
+            <SegmentHome />
+            <FooterHome />
           </div>
-            
-            
-            
         </Col>
       </Row>
     </Container>

@@ -1,3 +1,4 @@
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -15,7 +16,6 @@ export default function FooterHome() {
     <Container>
     <Row>
       <Col lg>
-
     <MDBFooter className='text-center text-white' style={{ backgroundColor: '#f1f1f1' }}>
       <MDBContainer className='pt-4'>
         <section className='mb-4'>
@@ -66,7 +66,6 @@ export default function FooterHome() {
           >
             <MDBIcon fab className='fa-instagram' />
           </MDBBtn>
-
           <MDBBtn
             rippleColor="dark"
             color='link'
@@ -78,7 +77,6 @@ export default function FooterHome() {
           >
             <MDBIcon fab className='fa-linkedin' />
           </MDBBtn>
-
           <MDBBtn
             rippleColor="dark"
             color='link'
@@ -88,16 +86,13 @@ export default function FooterHome() {
             href='#!'
             role='button'
           >
-
           </MDBBtn>
         </section>
       </MDBContainer>
 
       <div className='text-center text-dark p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
         © 2020 Copyright:
-        <a className='text-dark' href='https://mdbootstrap.com/'>
-
-        </a>
+      
       </div>
       </MDBFooter>
       </Col>

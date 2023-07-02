@@ -1,3 +1,4 @@
+
 import React from "react";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -10,21 +11,20 @@ import { FcSearch, FcDepartment } from "react-icons/fc";
 function Properties() {
   return (
     <Container>
-    <Row>
-      <Col lg>
-      <hr className="style1" />
-      <div className="productsNav container" >
-        
-        <Link className="linkproperties" to="/properties/list"><FcSearch /> List </Link>
-        <Link className="linkproperties" to="/properties/add"> <FcDepartment /> New Property </Link>
-      </div>
-      <Outlet />
-      </Col>
+      <Row>
+        <Col lg>
+          <hr className="stylehr" />
+          <div className="propertiesNav  container" >
+            <Link className="linkproperties" to="/properties/list"><FcSearch /> List </Link>
+            <Link className="linkproperties" to="/properties/add/"> <FcDepartment /> New Property </Link>
+          </div>
+          <Outlet />
+        </Col>
 
 
-</Row>
+      </Row>
 
-</Container>
+    </Container>
 
   );
 }

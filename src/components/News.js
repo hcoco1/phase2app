@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -10,6 +11,7 @@ import FooterHome from "./FooterHome";
 function News({ properties }) {
     const sortedProperties = [...properties]
     const [userData, setUserData] = useState({
+        
         labels: sortedProperties.filter(data => data.state === 'Texas').sort((a, b) => a.city.localeCompare(b.city)).map(data => data.city),
         datasets: [
             {
@@ -33,13 +35,13 @@ function News({ properties }) {
         <Container>
             <Row>
                 <Col lg>
-                    <hr className="style1" />
+                    <hr className="stylehr" />
                     <h3 className="styleh3">Prices Trend by Cities in Texas State. </h3>
-                    <hr className="style1" />
+                    <hr className="stylehr" />
                     <BarChart chartData={userData} />
-                    <hr className="style1" />
+                    <hr className="stylehr" />
                     <h3 className="styleh3">Prices Trend by Cities in Texas State. </h3>
-                    <hr className="style1" />
+                    <hr className="stylehr" />
                     <LineChart chartData={userData} />
                     <FooterHome />
                 </Col>

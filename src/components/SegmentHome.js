@@ -34,8 +34,6 @@ export default class SegmentHome extends Component {
               <Accordion.Content active={activeIndex === 0}>
                 <p>
                   First impressions matter in business, but especially in real estate. Anyone walking through a house or touring it virtually will be looking for ways to pass or negotiate down on the price. You must help clients make sure that the HVAC, plumbing, and electrical system all work properly. Each room should look clean and decluttered with no overt damage insight.
-
-
                 </p>
               </Accordion.Content>
 
@@ -50,7 +48,6 @@ export default class SegmentHome extends Component {
               <Accordion.Content active={activeIndex === 1}>
                 <p>
                   Getting a pre-sale home inspected is never a bad idea, especially to get your client the best price for their home. Some homebuyers will feel uncomfortable purchasing a house without seeing a home inspection. Many will often hire their own inspector. It’s better to be safe than sorry.
-
 
                 </p>
               </Accordion.Content>

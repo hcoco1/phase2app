@@ -1,3 +1,4 @@
+
 import { useTable, useSortBy } from "react-table";
 import { useSticky } from "react-table-sticky";
 import React, { useState, useEffect } from "react";
@@ -90,11 +91,11 @@ function Contact({ properties }) {
     <Row>
       <Col lg>
       <div className="container" style={{ maxHeight: "1000px", overflowY: "auto" }}>
-        <hr className="style1" />
-        <h2 className="filterFormh2">
+        <hr className="stylehr" />
+        <h2 className="styleh2">
           <strong>Search by typing something or Sort by clicking on the headings:</strong>
         </h2>
-        <hr className="style1" />
+        <hr className="stylehr" />
         <input
           type="text"
           placeholder="Search by typing something..."

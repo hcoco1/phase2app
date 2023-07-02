@@ -61,9 +61,9 @@ function Search({ filteredProperties, resetForm, handlePrice, price, handleType,
             <Button compact onClick={() => resetForm()}>
               Reset values
             </Button>
-            
+
           </div>
-<h3 className='styleh3'>Found <strong>{filteredProperties.length}</strong> matching properties</h3>
+          <h3 className='styleh3'>Found <strong>{filteredProperties.length}</strong> matching properties</h3>
 
         </Col>
       </Row>

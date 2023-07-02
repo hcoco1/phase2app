@@ -3,14 +3,10 @@ import { useParams } from "react-router-dom";
 import { Button } from 'semantic-ui-react'
 import Modal from 'react-bootstrap/Modal';
 import CardModal from './CardModal';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 function ViewBtn({ properties }) {
   const mystyle = {
     color: "white",
-    
     padding: "5px",
     fontFamily: "Arial",
     textAlign:'center',

@@ -1,15 +1,15 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from "react-router-dom";
+
 import { useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
-export default function AddProperty({ onhandleAddProperty }) {
+export default function AddProperty({ onhandleAddProperty, property }) {
   const navigate = useNavigate();
-  const { id } = useParams();
+  
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = (data) => {
     fetch(`https://phase2-db.onrender.com/properties`, {
@@ -20,9 +20,9 @@ export default function AddProperty({ onhandleAddProperty }) {
       body: JSON.stringify(data),
     })
     .then((r) => r.json())
-    .then((property) => {
-      onhandleAddProperty(property);
-      navigate(`/properties/${property.id}`);
+    .then((currentProperty) => {
+      onhandleAddProperty(currentProperty);
+      navigate(`/properties/${currentProperty.id}`);
     })
     .catch((error) => {
       console.error('Error adding property:', error);

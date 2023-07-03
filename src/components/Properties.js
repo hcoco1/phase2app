@@ -16,7 +16,7 @@ function Properties() {
           <hr className="stylehr" />
           <div className="propertiesNav  container" >
             <Link className="linkproperties" to="/properties/list"><FcSearch /> List </Link>
-            <Link className="linkproperties" to="/properties/add/"> <FcDepartment /> New Property </Link>
+            <Link className="linkproperties" to="/properties/add"> <FcDepartment /> New Property </Link>
           </div>
           <Outlet />
         </Col>

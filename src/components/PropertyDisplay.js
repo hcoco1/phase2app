@@ -13,7 +13,7 @@ import Footer from "./Footer";
 function PropertyDisplay({ properties, onhandleDeletedProperty, property }) {
 
     const { id } = useParams();
-    const history = useNavigate();
+    const navigate = useNavigate();
     function handleDeleteClick() {
         // Call onDeleteItem, passing the deleted item
         fetch(`https://phase2-db.onrender.com/properties/${property.id}`, {
@@ -21,7 +21,7 @@ function PropertyDisplay({ properties, onhandleDeletedProperty, property }) {
         })
             .then((r) => r.json())
             .then(() => onhandleDeletedProperty(property.id));
-            history('/properties/list');
+            navigate('/properties/list');
     }
     return (
         <>

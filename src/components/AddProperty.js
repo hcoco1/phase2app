@@ -20,9 +20,10 @@ export default function AddProperty({ onhandleAddProperty, property }) {
       body: JSON.stringify(data),
     })
     .then((r) => r.json())
-    .then((currentProperty) => {
-      onhandleAddProperty(currentProperty);
-      navigate(`/properties/${currentProperty.id}`);
+    .then((property) => {
+      onhandleAddProperty(property);
+      console.log(`${property.id}`)
+      navigate(`/properties/${property.id}`);
     })
     .catch((error) => {
       console.error('Error adding property:', error);

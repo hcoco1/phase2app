@@ -22,12 +22,11 @@ export default function AddProperty({ onhandleAddProperty, property }) {
     .then((r) => r.json())
     .then((property) => {
       onhandleAddProperty(property);
-      navigate(`/properties/list`);
-    })
+          })
     .catch((error) => {
       console.error('Error adding property:', error);
     });
-    
+    navigate(`/properties/list`);
 
   }
   console.log(errors);

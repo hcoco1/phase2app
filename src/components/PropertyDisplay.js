@@ -21,7 +21,7 @@ function PropertyDisplay({ properties, onhandleDeletedProperty, property }) {
         })
             .then((r) => r.json())
             .then(() => onhandleDeletedProperty(property.id));
-        history('/properties/list');
+            history('/properties/list');
     }
     return (
         <>

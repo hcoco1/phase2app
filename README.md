@@ -27,7 +27,60 @@
 
 Additionally, the user can view details about a property by clicking the View button, and immediately they will be sent to a new view where only the selected property is shown. Also, the users can access more images and the delete button in the detail view. Finally, users can add a new property to the database by filling out the form. Also, The user can view some statistic charts in the chart tab.
 
-## Instructions:
+## Installation instructions:
+1.- Fork and clone this repository.
+2.- Open the project directory in your terminal.
+3.- Install the dependencies using the following command:
+```
+    npm install <dependency-name> --save
+
+```
+Replace <dependency-name> with the name of the dependency you want to install. For example, to install the bootstrap dependency, you would use the following command:
+```
+    npm install bootstrap --save
+
+```
+4.- Once all of the dependencies have been installed, you can start the development server using the following command:
+```
+    npm start
+
+```
+The development server will start on port 3000. You can access your React app at http://localhost:3000.
+
+Here is a complete list of the commands you need to run:
+
+Clone repository
+```
+git clone git@github.com:hcoco1/phase2app.git
+```
+
+Open the project directory in your terminal
+```
+cd phase2app
+```
+
+Install the dependencies
+```
+npm install bootstrap chart.js mdb-react-ui-kit mdb-ui-kit modern-normalize react-bootstrap react-chartjs-2 react-dom react-hook-form react-icons react-router-dom react-table react-table-plugins react-table-sticky semantic-ui-css semantic-ui-react --save
+```
+
+For the next dependencies, users have to follow these additional steps:
+* Bootstrap : <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank">https://getbootstrap.com/docs/5.3/getting-started/introduction/</a>
+
+* Material Design for Bootstrap 5 & React 18: <a href="https://mdbootstrap.com/docs/react/getting-started/installation/" target="_blank">https://mdbootstrap.com/docs/react/getting-started/installation/</a>
+
+* Material Design for Bootstrap 5 & Vanilla JavaScript: <a href="https://mdbootstrap.com/docs/standard/" target="_blank">https://mdbootstrap.com/docs/standard/</a>
+
+* Semantic UI: <a href="https://semantic-ui.com/introduction/getting-started.html" target="_blank">https://semantic-ui.com/introduction/getting-started.html</a>
+
+* Semantic UI React: <a href="https://react.semantic-ui.com/usage" target="_blank">https://react.semantic-ui.com/usage</a>
+
+Start the development server
+```
+npm start
+```
+
+## How to navigate in RES:
 
  Users can access the app data through four main links in the navigation bar: Home, Properties, Tables, and Charts.
 
@@ -198,3 +251,21 @@ Database Structure
 
 
  
+
+ 
+ 
+
+
+ 
+
+
+
+
+
+
+      
+     
+
+
+      
+

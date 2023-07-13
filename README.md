@@ -28,9 +28,9 @@
 Additionally, the user can view details about a property by clicking the View button, and immediately they will be sent to a new view where only the selected property is shown. Also, the users can access more images and the delete button in the detail view. Finally, users can add a new property to the database by filling out the form. Also, The user can view some statistic charts in the chart tab.
 
 ## Installation instructions:
-1.- Fork and clone this repository.
-2.- Open the project directory in your terminal.
-3.- Install the dependencies using the following command:
+1. Fork and clone this repository.
+2. Open the project directory in your terminal.
+3. Install the dependencies using the following command:
 ```
     npm install <dependency-name> --save
 
@@ -40,16 +40,16 @@ Replace <dependency-name> with the name of the dependency you want to install. F
     npm install bootstrap --save
 
 ```
-4.- Once all of the dependencies have been installed, you can start the development server using the following command:
+4. Once all of the dependencies have been installed, you can start the development server using the following command:
 ```
     npm start
 
 ```
-The development server will start on port 3000. You can access your React app at http://localhost:3000.
+The development server will start on port 3000. You can access the app at http://localhost:3000.
 
 Here is a complete list of the commands you need to run:
 
-Clone repository
+Clone repository:
 ```
 git clone git@github.com:hcoco1/phase2app.git
 ```
@@ -59,12 +59,13 @@ Open the project directory in your terminal
 cd phase2app
 ```
 
-Install the dependencies
+Install the dependencies:
 ```
 npm install bootstrap chart.js mdb-react-ui-kit mdb-ui-kit modern-normalize react-bootstrap react-chartjs-2 react-dom react-hook-form react-icons react-router-dom react-table react-table-plugins react-table-sticky semantic-ui-css semantic-ui-react --save
 ```
+---
+Users have to follow these additional steps before start the App:
 
-For the next dependencies, users have to follow these additional steps:
 * Bootstrap : <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank">https://getbootstrap.com/docs/5.3/getting-started/introduction/</a>
 
 * Material Design for Bootstrap 5 & React 18: <a href="https://mdbootstrap.com/docs/react/getting-started/installation/" target="_blank">https://mdbootstrap.com/docs/react/getting-started/installation/</a>
@@ -74,8 +75,9 @@ For the next dependencies, users have to follow these additional steps:
 * Semantic UI: <a href="https://semantic-ui.com/introduction/getting-started.html" target="_blank">https://semantic-ui.com/introduction/getting-started.html</a>
 
 * Semantic UI React: <a href="https://react.semantic-ui.com/usage" target="_blank">https://react.semantic-ui.com/usage</a>
+---
 
-Start the development server
+Start the development server:
 ```
 npm start
 ```
@@ -84,13 +86,13 @@ npm start
 
  Users can access the app data through four main links in the navigation bar: Home, Properties, Tables, and Charts.
 
-1.- Once the page load, the home page shows a few images and some information about real estate.
+1. Once the page load, the home page shows a few images and some information about real estate.
 
-2.-All the data is fetched in the properties tab. The user can scroll down and check the collection of properties. There are two nested tabs in  Properties: List and Add New Property. The List tab is, by default, where all data is displayed. By clicking the view button on a property card, users will be sent to a new view where only the selected property is shown. Also, the users can access more images, and a delete button is in the detail view. The user will be sent to the List tab by clicking the List button. The Add New Property tab is where the user adds new real estate properties in the database.
+2. All the data is fetched in the properties tab. The user can scroll down and check the collection of properties. There are two nested tabs in  Properties: List and Add New Property. The List tab is, by default, where all data is displayed. By clicking the view button on a property card, users will be sent to a new view where only the selected property is shown. Also, the users can access more images, and a delete button is in the detail view. The user will be sent to the List tab by clicking the List button. The Add New Property tab is where the user adds new real estate properties in the database.
 
-3.- A table is shown in the Table tab. It contains information on seven attributes (id,  city, state, listing price,  square feet,  property type, and operation type). Users can sort the attributes by clicking on the table header. Additionally, users can search for a specific detail by typing in the search text box input located about the table.
+3. A table is shown in the Table tab. It contains information on seven attributes (id,  city, state, listing price,  square feet,  property type, and operation type). Users can sort the attributes by clicking on the table header. Additionally, users can search for a specific detail by typing in the search text box input located about the table.
 
-4.- Two statistics charts are shown in the Charts tab. A bar chart and a line chart show information about how properties prices in Texas state. If the user hovers over the graph, some information will be displayed.
+4. Two statistics charts are shown in the Charts tab. A bar chart and a line chart show information about how properties prices in Texas state. If the user hovers over the graph, some information will be displayed.
 
 <div align="center">
 
@@ -247,25 +249,3 @@ Database Structure
  2. Responsive design.
 
  3. Update the state of the modal components.
-
-
-
- 
-
- 
- 
-
-
- 
-
-
-
-
-
-
-      
-     
-
-
-      
-

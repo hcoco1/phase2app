@@ -12,6 +12,7 @@ function ListProperties({ properties, onUpdate }) {
     const [price, setPrice] = useState('All');
     const [type, setType] = useState('All');
     const [operation, setOperation] = useState('All');
+    
     //Reset filter to all values using state
     const resetForm = () => {
         setPrice('All')

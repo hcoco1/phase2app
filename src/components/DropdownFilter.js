@@ -58,11 +58,12 @@ function DropdownFilter({ filteredProperties, resetForm, handlePrice, price, han
             </DropdownButton>
           </div>
           <div className='searchMenu'>
-            
-            <Button compact onClick={() => resetForm()}>
-              Reset values
-            </Button>
-           
+
+            {price !== "All" || type !== "All" || operation !== "All" ? (
+              <Button compact onClick={() => resetForm()}>
+                Reset values
+              </Button>
+            ) : null}
 
           </div>
           <h3 className='styleh3'>Found <strong>{filteredProperties.length}</strong> matching properties</h3>

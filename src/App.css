@@ -130,7 +130,7 @@ p {
 }
 
 .linkNav:hover {
-  color: var(--bs-cyan);
+  color: var(--bs-gray);
   font-size: 25px;
   transition: ease-in-out;
 }
@@ -141,7 +141,7 @@ p {
 }
 
 .linkproperties:hover {
-  color: rgb(0, 0, 0);
+  color: var(--bs-dark);
 }
 
 .cardContainer {

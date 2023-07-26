@@ -53,12 +53,14 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='charts' element={<PropertyCharts properties={properties} />}></Route>
             <Route path='search' element={<SearchTable properties={properties} />}></Route>
+
             <Route path='/properties/' element={<Properties />}>
               <Route path='list' element={<ListProperties properties={properties} onUpdate={handleCurrentProperty} />} />
               <Route path='add' element={<AddProperty onhandleAddProperty={handleAddProperty} setProperties={setProperties} property={currentProperty} />} />
               <Route path=':id' element={<PropertyDisplay properties={properties} property={currentProperty} onhandleDeletedProperty={handleDeletedProperty} />} />
               <Route path='*' element={<NoMatch />} />
             </Route>
+            
           </Routes>
         </Col>
       </Row>

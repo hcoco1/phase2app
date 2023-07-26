@@ -9,22 +9,24 @@ function NavigationBar() {
   const activeStyles = {
     fontWeight: "bold",
     textDecoration: "none",
-    color: "var(--success)"
+    color: "var(--bs-teal)"
   }
   return (
 
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" sticky="top" >
       <Container>
         <Navbar.Brand>
-          <NavLink className="linkNav" style={({ isActive }) => isActive ? activeStyles : null} end to="/">Home</NavLink>
+          <NavLink className="linkNav" style={({ isActive }) => isActive ? activeStyles : null} to="/">Home</NavLink>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
+
             <NavLink
               id="RouterNavLink"
               className="linkNav"
               style={({ isActive }) => isActive ? activeStyles : null}
+              
               to="properties/list"
             >
               Properties

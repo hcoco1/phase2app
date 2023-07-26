@@ -112,10 +112,10 @@ p {
 }
 
 .propertiesNav a {
-  font-size: 20px;
+  font-size: 17px;
   width: 200px;
   height: 40px;
-  background-color: var(--bs-cyan);
+  background-color: var(--gray-2);
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -124,25 +124,18 @@ p {
 }
 
 .linkNav {
-  color: var(--bs-light);
+  color: var(--bs-blue);
   font-size: 20px;
   font-family: var(--bs-font-sans-serif);
 }
 
 .linkNav:hover {
-  color: var(--bs-gray);
+  color: var(--bs-blue);
   font-size: 25px;
   transition: ease-in-out;
 }
 
-.linkproperties {
-  color: var(--bs-gray);
-  font-size: 15px;
-}
 
-.linkproperties:hover {
-  color: var(--bs-dark);
-}
 
 .cardContainer {
   display: flex;
@@ -259,7 +252,7 @@ tbody td:hover:before {
 
 
 .striped-table .even-row {
-  background-color: var(--bs-info);
+  background-color: var( --gray-2);
 }
 
 .striped-table .odd-row {
@@ -269,14 +262,14 @@ tbody td:hover:before {
 .sticky {
   position: sticky;
   top: 0;
-  background-color: var(--bs-light);
+  background-color: var(--bs-info);
   z-index: 1;
 }
 
 .sticky th {
   position: sticky;
   top: 0;
-  background-color: var(--bs-light);
+  background-color: var(--bs-info);
   z-index: 1;
 }
 

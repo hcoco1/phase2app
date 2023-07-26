@@ -12,7 +12,7 @@ function Properties() {
   const activeStyles = {
     fontWeight: "bold",
     textDecoration: "none",
-    color: "var(--bs-primary)"
+    color: "var(--bs-teal)"
   }
   return (
     <Container>
@@ -20,8 +20,16 @@ function Properties() {
         <Col lg>
           <hr className="stylehr" />
           <div className="propertiesNav  container" >
-            <NavLink className="linkproperties" className="linkNav" style={({ isActive }) => isActive ? activeStyles : null} end to="/properties/list"><FcSearch /> List </NavLink>
-            <NavLink className="linkproperties"  className="linkNav" style={({ isActive }) => isActive ? activeStyles : null} to="/properties/add"> <FcDepartment /> New Property </NavLink>
+            <NavLink 
+            className="linkNav"  
+            style={({ isActive }) => isActive ? activeStyles : null} 
+            end 
+            to="list"><FcSearch /> List </NavLink>
+
+            <NavLink 
+            className="linkNav"   
+            style={({ isActive }) => isActive ? activeStyles : null} 
+            to="add"> New Property </NavLink>
             
           </div>
           <Outlet />

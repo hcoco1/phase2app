@@ -14,6 +14,7 @@
 
 
 ## Phase 2 Project: Real State Site.
+### Demo video link: https://youtu.be/gTGiYxPJ-Dk
 ### Deployment link: https://phase2app.vercel.app/
 ##### Phase 2 Project repository link: https://github.com/hcoco1/phase2app
 ### Database link:  https://phase2-db.onrender.com/
